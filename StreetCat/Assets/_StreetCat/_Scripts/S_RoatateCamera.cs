@@ -75,7 +75,7 @@ public class S_RoatateCamera : MonoBehaviour
 			}
 			firstFrameAllowedRot = false;
 		}
-		lerpPrecentage = Mathf.MoveTowards(lerpPrecentage, 1,  rotationSpeed);
+		lerpPrecentage = Mathf.MoveTowards(lerpPrecentage, 1,  rotationSpeed * Time.time);
 
 		transform.rotation =Quaternion.Euler(0, Quaternion.Slerp(transform.rotation, lookRotation, lerpPrecentage).eulerAngles.y, 0);
 		
