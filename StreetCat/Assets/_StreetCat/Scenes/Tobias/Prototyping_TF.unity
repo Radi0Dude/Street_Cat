@@ -247,6 +247,8 @@ MonoBehaviour:
   speed: 5
   moveAxis: Horizontal
   moveAmount: {x: 0, y: 0}
+  moveDir: 0
+  horizontal: 0
 --- !u!54 &471729851
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -272,7 +274,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
+  m_Constraints: 12
   m_CollisionDetection: 0
 --- !u!114 &471729852
 MonoBehaviour:
@@ -757,6 +759,37 @@ MonoBehaviour:
   numofEnemies: 20
   palyerTransform: {fileID: 471729849}
   prefabEnemy: {fileID: 8109573078127147856, guid: 2c3e961bd77cce445b45a7d935656c70, type: 3}
+--- !u!1 &1933193437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1933193438}
+  m_Layer: 0
+  m_Name: Herlo
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1933193438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933193437}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2004855697
 GameObject:
   m_ObjectHideFlags: 0
@@ -862,3 +895,4 @@ SceneRoots:
   - {fileID: 1888259139}
   - {fileID: 1190401092}
   - {fileID: 1198109810}
+  - {fileID: 1933193438}
