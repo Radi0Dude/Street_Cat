@@ -32,9 +32,9 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	private void Start()
 	{
 		
-			playerOnePos = null;
-			playerTwoPos = null;
-			hasMultiplePlayers = false;
+		playerOnePos = null;
+		playerTwoPos = null;
+		hasMultiplePlayers = false;
 
 
 	}
@@ -78,17 +78,14 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 			CalculateDistancePlayerIfTwo();
 		}
 
-		Debug.Log(difference);	
+		
 	}
 
 	private void OnSpawnPositionOnePlayer()
 	{
 		transform.position =  new Vector3(amountToSpawnInFront + playerOnePos.position.x, 0, playerOnePos.position.z);
 	}
-	private void OnSpawnPositionTwoPlayer()
-	{
-		transform.position = (playerOnePos.position + playerTwoPos.position) / 2;
-	}
+	
 	private void CalculateDistancePlayerOne()
 	{
 		playerXDistance = pointPos.position.x - playerOnePos.position.x;
@@ -99,7 +96,6 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 		{
 			float distance = playerOnePos.position.x - hasMoved.x;
 			transform.position = new Vector3(transform.position.x + (distance * difference), 0, playerOnePos.position.z);
-			Debug.Log(hasMoved);
 			hasMoved.x = playerOnePos.position.x;
 		}
 	}

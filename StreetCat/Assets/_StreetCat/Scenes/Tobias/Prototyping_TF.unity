@@ -478,6 +478,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ca25c4f8c8df8b409fcf5b3c2b5ec10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sphereRadius: 1
 --- !u!1 &1506514922
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +636,7 @@ MonoBehaviour:
   m_PlayerJoinedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2002708883}
+      - m_Target: {fileID: 2002708884}
         m_TargetAssemblyTypeName: S_FollowPlayerPosCamera_TLHF, Assembly-CSharp
         m_MethodName: PlayerJoinedEvent
         m_Mode: 1
@@ -662,7 +663,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  m_PlayerPrefab: {fileID: 8568691765980693359, guid: 72be27ddbe7f353458d49cda1286e060, type: 3}
+  m_PlayerPrefab: {fileID: 8568691765980693359, guid: 7c8d7e806246fa245ab7b9d0b8a7ea1d, type: 3}
   m_SplitScreen: 0
   m_MaintainAspectRatioInSplitScreen: 0
   m_FixedNumberOfSplitScreens: -1
@@ -891,12 +892,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12a8cb27bfa6f140a4d39f0e35dda0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerOnePos: {fileID: 0}
-  playerTwoPos: {fileID: 0}
-  pointPos: {fileID: 0}
-  amountToSpawnInFront: 3
-  pointTag: CameraPoint
-  playertag: Player
 --- !u!114 &2002708884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -909,6 +904,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 572bdc4260b9bc240827cab4268b0fdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerOnePos: {fileID: 0}
+  playerTwoPos: {fileID: 0}
+  pointPos: {fileID: 0}
+  amountToSpawnInFront: 3
+  pointTag: CameraPoint
+  playertag: Player
 --- !u!1 &2004855697
 GameObject:
   m_ObjectHideFlags: 0
