@@ -132,7 +132,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -150,9 +150,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7361618ba6f78fa4d92fa9bb6b5a9a24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hitBoxSize: {x: 3, y: 3, z: 3}
   mask:
     serializedVersion: 2
     m_Bits: 512
+  radius: 3.91
+  useSphere: 0
+  inactiveColor: {r: 0, g: 0, b: 0, a: 0}
+  collisionOpenColor: {r: 0, g: 0, b: 0, a: 0}
+  collidingColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7281942329801595287
 GameObject:
   m_ObjectHideFlags: 0
