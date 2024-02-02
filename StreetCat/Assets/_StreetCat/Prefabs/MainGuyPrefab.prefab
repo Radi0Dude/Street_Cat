@@ -94,7 +94,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7689567719314617038}
   - component: {fileID: 4116125345635115407}
-  - component: {fileID: 785820788448595926}
   m_Layer: 8
   m_Name: HitBox
   m_TagString: Untagged
@@ -138,27 +137,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &785820788448595926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4667460900736576305}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7361618ba6f78fa4d92fa9bb6b5a9a24, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitBoxSize: {x: 3, y: 3, z: 3}
-  mask:
-    serializedVersion: 2
-    m_Bits: 512
-  radius: 3.91
-  useSphere: 0
-  inactiveColor: {r: 0, g: 0, b: 0, a: 0}
-  collisionOpenColor: {r: 0, g: 0, b: 0, a: 0}
-  collidingColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7281942329801595287
 GameObject:
   m_ObjectHideFlags: 0
@@ -169,7 +147,6 @@ GameObject:
   m_Component:
   - component: {fileID: 44001703002736697}
   - component: {fileID: 663399233038713456}
-  - component: {fileID: 9024225409148208897}
   m_Layer: 0
   m_Name: HurtBox
   m_TagString: Untagged
@@ -213,22 +190,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9024225409148208897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7281942329801595287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6da3ea14a26c1d4baf565d174aece75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collider: {fileID: 663399233038713456}
-  inactiveColor: {r: 0, g: 0, b: 0, a: 0}
-  collisionOpenColor: {r: 0, g: 0, b: 0, a: 0}
-  collidingColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8568691765980693359
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 6150347097ae95549a78058f2810d9b5, type: 3}
+  m_Actions: {fileID: -944628639613478452, guid: 186a461f7c68305409dc324ace30cb1a, type: 3}
   m_NotificationBehavior: 2
   m_UIInputModule: {fileID: 0}
   m_DeviceLostEvent:
