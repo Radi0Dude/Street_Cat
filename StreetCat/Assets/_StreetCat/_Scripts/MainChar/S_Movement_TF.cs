@@ -43,7 +43,7 @@ public class S_Movement_TF : MonoBehaviour
 
 		if (horizontal > 0)
 		{
-			rayDir = 0.51f;
+			rayDir = 0.52f;
 			transform.eulerAngles = new Vector3(0, 0, 0);
 			moveDir = horizontal;
 			debugRayDir = transform.right;
@@ -53,9 +53,9 @@ public class S_Movement_TF : MonoBehaviour
 		if (horizontal < 0)
 		{
 			rayDir = 0.52f;
-			transform.eulerAngles = new Vector3(0, 180, 0);
-			moveDir = -horizontal;
-			debugRayDir = transform.right;
+
+			moveDir = horizontal;
+			debugRayDir = -transform.right;
 			raySomething = -1;
 			//Maybe add animation here, get a check to see which way the animation was last frame
 		}
