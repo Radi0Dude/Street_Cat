@@ -169,6 +169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 44001703002736697}
   - component: {fileID: 663399233038713456}
+  - component: {fileID: 9024225409148208897}
   m_Layer: 0
   m_Name: HurtBox
   m_TagString: Untagged
@@ -212,6 +213,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &9024225409148208897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281942329801595287}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6da3ea14a26c1d4baf565d174aece75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collider: {fileID: 663399233038713456}
+  inactiveColor: {r: 0, g: 0, b: 0, a: 0}
+  collisionOpenColor: {r: 0, g: 0, b: 0, a: 0}
+  collidingColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8568691765980693359
 GameObject:
   m_ObjectHideFlags: 0
