@@ -337,3 +337,63 @@ MonoBehaviour:
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
     IsHidden: 0
+  - Type: 1
+    Key: Assets/_StreetCat/_z Animation/FBX Animations
+    Ordinal: 27
+    Priority: 0
+    IconType: 2110
+    SmallIcon: {fileID: 0}
+    LargeIcon: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 130
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 1
+    Key: Assets/_StreetCat/_Scripts
+    Ordinal: 28
+    Priority: 0
+    IconType: 2160
+    SmallIcon: {fileID: 0}
+    LargeIcon: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 190
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 1
+    Key: Assets/_StreetCat/_z Animation
+    Ordinal: 29
+    Priority: 0
+    IconType: 2580
+    SmallIcon: {fileID: 0}
+    LargeIcon: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 130
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 1
+    Key: Assets/_StreetCat/_z Animation/Controllers
+    Ordinal: 30
+    Priority: 0
+    IconType: 2150
+    SmallIcon: {fileID: 0}
+    LargeIcon: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 40
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 1
+    Key: Assets/_StreetCat/Model Files
+    Ordinal: 31
+    Priority: 0
+    IconType: 1
+    SmallIcon: {fileID: 2800000, guid: deb7d875f8614f24cbcdfe231e4c11c2, type: 3}
+    LargeIcon: {fileID: 2800000, guid: deb7d875f8614f24cbcdfe231e4c11c2, type: 3}
+    IsIconRecursive: 0
+    BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
