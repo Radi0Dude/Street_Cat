@@ -597,9 +597,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2376687294686575403, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
   m_PrefabInstance: {fileID: 7412683785443492751}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2002708884 stripped
+--- !u!114 &2002708883 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7671031061981788003, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
+  m_CorrespondingSourceObject: {fileID: 6116983997031705610, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
   m_PrefabInstance: {fileID: 7412683785443492751}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -751,9 +751,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5092869029355884558, guid: 9d903f2a881cbd14e90292aeca8bdf5f, type: 3}
+      propertyPath: m_PlayerPrefab
+      value: 
+      objectReference: {fileID: 8568691765980693359, guid: 7c8d7e806246fa245ab7b9d0b8a7ea1d, type: 3}
+    - target: {fileID: 5092869029355884558, guid: 9d903f2a881cbd14e90292aeca8bdf5f, type: 3}
       propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2002708884}
+      objectReference: {fileID: 2002708883}
+    - target: {fileID: 5092869029355884558, guid: 9d903f2a881cbd14e90292aeca8bdf5f, type: 3}
+      propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayerJoinedEvent
+      objectReference: {fileID: 0}
     - target: {fileID: 7596032019766711457, guid: 9d903f2a881cbd14e90292aeca8bdf5f, type: 3}
       propertyPath: m_Name
       value: Input Manager
