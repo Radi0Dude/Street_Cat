@@ -753,7 +753,7 @@ PrefabInstance:
     - target: {fileID: 5092869029355884558, guid: 9d903f2a881cbd14e90292aeca8bdf5f, type: 3}
       propertyPath: m_PlayerPrefab
       value: 
-      objectReference: {fileID: 8568691765980693359, guid: 7c8d7e806246fa245ab7b9d0b8a7ea1d, type: 3}
+      objectReference: {fileID: 8125692324221831014, guid: d638abec2c6556f4d8df0a8e7e73c872, type: 3}
     - target: {fileID: 5092869029355884558, guid: 9d903f2a881cbd14e90292aeca8bdf5f, type: 3}
       propertyPath: m_PlayerJoinedEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
