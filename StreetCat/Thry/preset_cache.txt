@@ -41,11 +41,6 @@ SpecialFX/Iridescence/Basic Replace;a2148f1e07bda204f95afdd9b7dc1363
 SpecialFX/Mirror/Hide In Mirror;5bc9ee9a1e88a4e4eafa886eda898605
 SpecialFX/Pathing/Maze;06edf4f598365194da02a2f88d978140
 SpecialFX/Stats Overlay/FPS Counter;bd64ff25d55580d4babac484ae4eb86a
-Rendering/Blending/Premultiplied;44651ad5ffdc5984d94b17643655a54f
-Rendering/Blending/Soft Additive;0007a6f392a56684fb9a8d0234ce9363
-SpecialFX/Dissolve/To Invisible;60de3ab9268e046498246615c493a8a8
-Color & Normals/Alpha Options/Fade Far;a82adf2b97c91c64ab1480a420df059d
-Shading/Reflections & Specular/Dull Non Metal;767f56022ab17734e8e9f98f5edc2fa5
 Shading/Environmental Rim/Basic Rim;6b8456d463514064680ab7a96c4ef88b
 Color & Normals/Alpha Options/Alpha to Coverage + Dithering;abd0b18b77c1a6c4bb595b1a63935d4d
 LilToon Shading Preset;66bddab58e9830b43866e7a7e4af3e47

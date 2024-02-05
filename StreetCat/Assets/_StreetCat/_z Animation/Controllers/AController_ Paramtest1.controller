@@ -65,7 +65,7 @@ AnimatorStateMachine:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Movement Blendtree
+  m_Name: Blendtree
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 3039246605016608019}
@@ -285,6 +285,18 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
+  - m_Name: moveDir
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: animatorMoveName
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -299,7 +311,7 @@ AnimatorController:
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
   - serializedVersion: 5
-    m_Name: Movement Blendtree
+    m_Name: Blendtree
     m_StateMachine: {fileID: -5917931274290225784}
     m_Mask: {fileID: 0}
     m_Motions: []
@@ -319,7 +331,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 3
-    m_ConditionEvent: Move_X
+    m_ConditionEvent: moveAmount.x
     m_EventTreshold: 0.5
   - m_ConditionMode: 3
     m_ConditionEvent: Pos_X
