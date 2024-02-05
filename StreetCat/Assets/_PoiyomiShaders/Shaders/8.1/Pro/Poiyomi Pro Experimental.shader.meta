@@ -1,9 +1,15 @@
 fileFormatVersion: 2
-guid: 0f71a737672271c4989ee599fbf7b146
+guid: 73df619c2f001ea48bd7ed82e4428027
 ShaderImporter:
   externalObjects: {}
-  defaultTextures: []
-  nonModifiableTextures: []
+  defaultTextures:
+  - _ClothDFG: {fileID: 2800000, guid: 76d65cbce584df7449699fb8406f60ea, type: 3}
+  - _SkinLUT: {fileID: 2800000, guid: d13510bb2be49aa40a66a0101efb6a36, type: 3}
+  - _ToonRamp: {fileID: 2800000, guid: 61bd594533da4fc42bd46ef93ba5a4f6, type: 3}
+  nonModifiableTextures:
+  - _ClothDFG: {fileID: 2800000, guid: 76d65cbce584df7449699fb8406f60ea, type: 3}
+  - _SkinLUT: {fileID: 2800000, guid: d13510bb2be49aa40a66a0101efb6a36, type: 3}
+  - _ToonRamp: {fileID: 2800000, guid: 61bd594533da4fc42bd46ef93ba5a4f6, type: 3}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
