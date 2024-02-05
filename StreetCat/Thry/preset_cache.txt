@@ -1,5 +1,3 @@
-Color & Normals/Alpha Options/Alpha to Coverage + Dithering;876e0e5a05f7ef545a8b9f7ef7c9b8ab
-Color & Normals/Alpha Options/Center Fade;c62e16dcbb7c663458f6e5a0b7c135e6
 Color & Normals/Alpha Options/Fade Close;10fbdd7dc0c5ca740a4ce43ab8c14ebc
 Color & Normals/Alpha Options/Fade Far;57259dd640ba4924c95b60752ef331d7
 Color & Normals/Back Face/Back Face Glow;23e7aac75bb7d234682059af3d9ae541
@@ -77,3 +75,46 @@ SpecialFX/Emission/RainbowStars;d932aa472da23e04c84703321d927f5f
 SpecialFX/DepthFX/Color Near Object;2990e8bb59adf3740960ed87cb9f122c
 Shading/Clear Coat/Shiny;88d7333d00de9bd4796e4646efcc9dff
 Shading/Reflections & Specular/Dull Metal;2e6b063eec49a7048aaf4eb2bc1bff62
+Shading/Reflections & Specular/Dull Non Metal;66addae7f223fd24f88206c73b0def0b
+SpecialFX/DepthFX/Color Near Object;19abe35ff9bb7a4419d6789af884e251
+Shading/Environmental Rim/Basic Rim;d7afb2e80da464e41bf7189dccae7616
+Lighting/Maximum Add intensity of 1;54fad0d94c297ae4baeacea36947f68c
+Shading/Clear Coat/Shiny;bcf5421c49b55934abb10db80f364e7e
+Color & Normals/Color Adjust/Continuous Hue Shift;7079c7631af72624cbd416f744a0bf00
+SpecialFX/Pathing/Maze;ca0dae7b2bb700a43b655481d986872e
+Color & Normals/Alpha Options/Fade Far;4b8b70243cdf8d24cb3e103ee44d342f
+Rendering/Blending/2x Multiplicative;7cad7004a4fcc294e9dd000364894251
+Rendering/Blending/Multiplicative;9ae0f908ec7742146afb69b564e0d79f
+Lighting/Toon Hard Shadow;ef6426de7c198264bb2a696b00ce4c6c
+Shading/Stylized Specular/Simple Two Layer;4f4aefe499ab77a4ebeaba7a8c4c2b5c
+Rendering/Blending/Traditional Fade;d83bdb351efddce4aae497dbcdf324be
+Shading/Shading/Cloth;559bb548296e3a140bc23fc04061ef52
+Shading/Reflections & Specular/Shiny Metal;856d57e8df7e15445a71efe275b73e85
+SpecialFX/DepthFX/Fade Near Object;504703a18496f814ebdc035fd2c9a2c8
+Rendering/Blending/Soft Additive;29b96341663321f48aa7a14470fa3e4b
+SpecialFX/Glitter/GlitterStars;c21ce342b3053d14ebc510264db77aa5
+SpecialFX/Emission/RainbowStars;97655744f87a07d42bff583b1b84c538
+SpecialFX/Stats Overlay/FPS Counter;0806a95a4460b604da3234619cf862c7
+Color & Normals/Back Face/Back Face Glow;8880f2b9b0f62f2459d030641cf24bb8
+SpecialFX/Mirror/Hide In Mirror;73e6771128ccdce408737fe41031674a
+Lighting/UTS Style Additve;70817bb73d0065b4dab6cbc80550726e
+SpecialFX/Iridescence/Basic Replace;248a116e31846794d9527979bb3ab364
+Rendering/Blending/Premultiplied;461464a4162bf594aa8b5055ff12cafb
+Rendering/Blending/Additive;fb653fddba6e8af43867affd97f6f3b5
+Lighting/Maximum Add intensity Infinite;883fbacf6d604014285e3cde4376e641
+Lighting/Realistic;890d0250cac7a1d4b8ebb8fb671c90a3
+Shading/Reflections & Specular/Shiny Non Metal;81e188a2b4287cf4aa102130ef47fc30
+Color & Normals/Alpha Options/Alpha to Coverage + Dithering;0937929c7e934ba47b422d00337feb3c
+LilToon Shading Preset;b8b9e3f6b34394c469706a3cbc7c0cac
+Rendering/Double Sided;7215b0f16a9e58b4992aefe1c5c8fbcf
+Shading/Shading/Shade Maps;6612b22a63c55b74b987d03007e65545
+Rendering/Reduce Clip Distance;6e03994d864331f4d99cbcae6d00c51d
+Color & Normals/Alpha Options/Fade Close;9e0931f0eade84b4a9ba9360df20fe7e
+Lighting/Full UTS2;382cf94b46298f04584b045016dd64bd
+Color & Normals/Alpha Options/Center Fade;dc54d05433a1fd74d91a4f1eb187a91d
+Shading/Cubemap/Skybox;8797da818c628b94fb8345ea36d8fe1b
+Shading/Shading/lil Toon;0ddeee29cd997a2478264d9e270fcf4c
+SpecialFX/Dissolve/To Invisible;d62709e205360ce4bb6643fa81c65153
+Rendering/RenderTargetsAlphaFix;27af302830a1b5d44a947d7e240aeb10
+Examples/Early Outline/Sunglasses;fa684f330fa669140b7e43f62051e60d
+Shading/Reflections & Specular/Dull Metal;9b9b4af4d6f553640a2673dde1f77222

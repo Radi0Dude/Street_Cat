@@ -361,8 +361,8 @@ GameObject:
   - component: {fileID: 9025612593785651784}
   - component: {fileID: 3634658975990323534}
   - component: {fileID: 2411491420654608463}
-  - component: {fileID: 1655138268796652548}
   - component: {fileID: 7970894261452475613}
+  - component: {fileID: 1655138268796652548}
   - component: {fileID: 3740231763785016620}
   - component: {fileID: 7420686379546451732}
   - component: {fileID: 7804790791943541708}
@@ -442,6 +442,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7970894261452475613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568691765980693359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12cc5583e5377a74b9fd0eed16054b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  moveAxis: Horizontal
+  moveAmount: {x: 0, y: 0}
+  moveDir: 0
+  horizontal: 0
+  animator: {fileID: 0}
+  animatorMoveName: 
 --- !u!65 &1655138268796652548
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -463,23 +482,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7970894261452475613
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8568691765980693359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12cc5583e5377a74b9fd0eed16054b29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  moveAxis: Horizontal
-  moveAmount: {x: 0, y: 0}
-  moveDir: 0
-  horizontal: 0
 --- !u!54 &3740231763785016620
 Rigidbody:
   m_ObjectHideFlags: 0
