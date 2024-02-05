@@ -24,8 +24,18 @@ public class S_Movement_TF : MonoBehaviour
 	float rayDir;
 	Vector3 debugRayDir;
 	Ray ray;
-	 public float horizontal;
+	public float horizontal;
 
+	[SerializeField]
+	Animator animator;
+
+	[SerializeField]
+	string animatorMoveName;
+
+	private void Start()
+	{
+		animator = GetComponent<Animator>();
+	}
 	public void OnMove(InputAction.CallbackContext callbackContext)
 	{
 		moveAmount = callbackContext.ReadValue<Vector2>();
@@ -34,12 +44,16 @@ public class S_Movement_TF : MonoBehaviour
 	private void Update()
 	{
 		Movement();
+		
 	}
 
 	private void Movement()
 	{
 		horizontal = moveAmount.x;
-
+		if (animator)
+		{
+			animator.SetFloat(animatorMoveName, moveAmount.x);
+		}
 
 		if (horizontal > 0)
 		{
