@@ -41,8 +41,6 @@ SpecialFX/Iridescence/Basic Replace;a2148f1e07bda204f95afdd9b7dc1363
 SpecialFX/Mirror/Hide In Mirror;5bc9ee9a1e88a4e4eafa886eda898605
 SpecialFX/Pathing/Maze;06edf4f598365194da02a2f88d978140
 SpecialFX/Stats Overlay/FPS Counter;bd64ff25d55580d4babac484ae4eb86a
-Rendering/Double Sided;3b17b2ecadcc8c74b8e5ef98c6f6f37c
-SpecialFX/Pathing/Maze;e21c77c36786e0d45b0a35d46d90cf20
 Rendering/Blending/Premultiplied;44651ad5ffdc5984d94b17643655a54f
 Rendering/Blending/Soft Additive;0007a6f392a56684fb9a8d0234ce9363
 SpecialFX/Dissolve/To Invisible;60de3ab9268e046498246615c493a8a8
