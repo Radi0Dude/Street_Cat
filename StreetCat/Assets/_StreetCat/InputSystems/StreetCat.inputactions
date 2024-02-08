@@ -33,9 +33,18 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "KickAttack",
+                    "name": "KickAttackMid",
                     "type": "Button",
                     "id": "54b8d90b-51e4-44f6-bf8f-ac1e48236484",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "KickAttackLow",
+                    "type": "Button",
+                    "id": "afa9928a-af61-409d-8f0b-b690ae72f0e9",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -270,7 +279,40 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Gamepad",
-                    "action": "KickAttack",
+                    "action": "KickAttackMid",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "08d09c3b-8ddf-4cdb-b37c-f445c64eb4bc",
+                    "path": "<Keyboard>/j",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "KickAttackMid",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eef1c34a-b4d4-40dc-a478-88c3a1b49786",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "KickAttackLow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "296694c7-4682-429b-a78e-99a282d3bb1a",
+                    "path": "<Keyboard>/k",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "KickAttackLow",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
