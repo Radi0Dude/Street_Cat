@@ -8,10 +8,10 @@ using UnityEngine.InputSystem;
 public class S_Movement_TF : MonoBehaviour
 {
 
-	[SerializeField]
+	
 	[MinValue(0.0f)]
 	[ValidateInput("MoreThanZero", "Speed needs to be grater than zero to be able move")]
-	float speed;
+	public float speed;
 
 	float raySomething;
 	[InputAxis]
@@ -32,9 +32,16 @@ public class S_Movement_TF : MonoBehaviour
 	[SerializeField]
 	string animatorMoveName;
 
+	S_CheckAmountOfPlayers_TLHF checAmount;
+
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
+		checAmount = GameObject.Find("PlayerChecker").transform.GetComponent<S_CheckAmountOfPlayers_TLHF>();
+		if(checAmount.amountOfPlayers == 2)
+		{
+			transform.rotation = Quaternion.Euler(0, 180, 0);
+		}
 	}
 	public void OnMove(InputAction.CallbackContext callbackContext)
 	{
@@ -58,7 +65,7 @@ public class S_Movement_TF : MonoBehaviour
 		if (horizontal > 0)
 		{
 			rayDir = 0.52f;
-			transform.eulerAngles = new Vector3(0, 0, 0);
+			
 			moveDir = horizontal;
 			debugRayDir = transform.right;
 			raySomething = 1;
