@@ -1,9 +1,11 @@
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class S_HitboxCollider_TLHF : MonoBehaviour
 {
@@ -26,7 +28,18 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField]
 	Material mats;
 
-	public void MidAttaclKick()
+	[SerializeField]private TextMeshProUGUI D;
+    [SerializeField] private TextMeshProUGUI M;
+    [SerializeField] private TextMeshProUGUI A;
+
+
+    private void Start()
+    {
+        D.transform.gameObject.SetActive(false);
+        M.transform.gameObject.SetActive(false);
+        A.transform.gameObject.SetActive(false);
+    }
+    public void MidAttaclKick()
 	{
 		if(!cooldownMidhAttack)
 		{
@@ -52,6 +65,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	public void StyleMid()
 	{
 		styleChanger = 1;
+		
 	}
 	public void StyleDef()
 	{
@@ -68,13 +82,16 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		{
 			case 1:
 				mats.color = Color.green;
+				M.transform.gameObject.SetActive(true);
 				break;
 			case 2:
 				mats.color = Color.red;
-				break;
+                D.transform.gameObject.SetActive(true);
+                break;
 			case 3:
 				mats.color = Color.blue;
-				break;
+                A.transform.gameObject.SetActive(true);
+                break;
 
 		}
 	}
