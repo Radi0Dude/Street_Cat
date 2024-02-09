@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class S_HealthAndDamage_TLHF : MonoBehaviour
 {
@@ -13,9 +14,12 @@ public class S_HealthAndDamage_TLHF : MonoBehaviour
     [SerializeField]
     private int maxHealthAmount;
 
+	[SerializeField] Slider healthslider;
+
 	private void Start()
 	{
 		currentHealthAmount = maxHealthAmount;
+		healthslider.maxValue = maxHealthAmount;
 	}
 	private void TakeDamage(int amount)
     {
@@ -23,12 +27,17 @@ public class S_HealthAndDamage_TLHF : MonoBehaviour
         {
 			currentHealthAmount -= amount;
 			Debug.Log(currentHealthAmount);
+
 		}
 		if (currentHealthAmount <= 0)
 		{
 			Destroy(gameObject);
 		}
     }
+	private void Update()
+	{
+		healthslider.value = currentHealthAmount;
+	}
 
 	private void OnBecameInvisible()
 	{

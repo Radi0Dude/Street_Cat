@@ -229,11 +229,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 482996728}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!95 &604836622 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8319946228265642522, guid: f391ff0b8305b4541b826fea2a29bd5a, type: 3}
-  m_PrefabInstance: {fileID: 1043208508}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1043208508
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -497,10 +492,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 333485568776256102, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 604836622}
     - target: {fileID: 7061291781147697948, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -544,6 +535,42 @@ PrefabInstance:
     - target: {fileID: 7689174924992313766, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
       propertyPath: m_Name
       value: Detective_ConnectedBones
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848582190642662443, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
+      propertyPath: m_ActionEvents.Array.size
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848582190642662443, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionId
+      value: bd57d0a1-d982-4d7f-89d0-c7c7c105d73e
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848582190642662443, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionId
+      value: e8983023-2f04-4519-87d8-b720b961df45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848582190642662443, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionId
+      value: fb12125a-5257-4bc4-8e67-657fb2c2db14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848582190642662443, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionId
+      value: 4ce27eca-5a8d-4c20-8688-8fe5d36fa3d2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848582190642662443, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
+      propertyPath: m_ActionEvents.Array.data[15].m_ActionName
+      value: Player/StyleDef[/Keyboard/1]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848582190642662443, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
+      propertyPath: m_ActionEvents.Array.data[16].m_ActionName
+      value: Player/StyleMid[/Keyboard/2]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848582190642662443, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
+      propertyPath: m_ActionEvents.Array.data[17].m_ActionName
+      value: Player/StyleAtck[/Keyboard/3]
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848582190642662443, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
+      propertyPath: m_ActionEvents.Array.data[18].m_ActionName
+      value: Player/Intterract[/Keyboard/e]
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -731,6 +758,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: afa9928a-af61-409d-8f0b-b690ae72f0e9
     m_ActionName: Player/KickAttackLow[/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bd57d0a1-d982-4d7f-89d0-c7c7c105d73e
+    m_ActionName: Player/StyleDef[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e8983023-2f04-4519-87d8-b720b961df45
+    m_ActionName: Player/StyleMid[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fb12125a-5257-4bc4-8e67-657fb2c2db14
+    m_ActionName: Player/StyleAtck[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ce27eca-5a8d-4c20-8688-8fe5d36fa3d2
+    m_ActionName: Player/Intterract[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -751,6 +794,10 @@ MonoBehaviour:
   attackHitboxes: []
   hurtBoxLayer: Default
   hurtBoxTag: Default
+  mats: {fileID: 0}
+  D: {fileID: 0}
+  M: {fileID: 0}
+  A: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
