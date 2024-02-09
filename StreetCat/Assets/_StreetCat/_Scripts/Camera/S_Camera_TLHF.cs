@@ -14,13 +14,8 @@ public class S_Camera_TLHF : MonoBehaviour
 
 	private void Update()
 	{
-
-
-		
 		var distance = path.FindClosestPoint(playerPos.position, 0, -1, 10);
 		Vector3 destination = path.EvaluatePositionAtUnit(distance, CinemachinePathBase.PositionUnits.Distance);
 		transform.position = destination;
-
-
 	}
 }
