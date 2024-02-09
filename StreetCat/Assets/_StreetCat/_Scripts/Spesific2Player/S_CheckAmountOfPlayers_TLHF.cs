@@ -48,6 +48,7 @@ public class S_CheckAmountOfPlayers_TLHF : MonoBehaviour
 
 
 		text1.SetActive(false);
+        text2.fontSize = 100;
         text2.text = "3";
         yield return new WaitForSeconds(1);
 		text2.text = "2";
@@ -57,6 +58,8 @@ public class S_CheckAmountOfPlayers_TLHF : MonoBehaviour
         text2.text = "Start!!";
 		players[0].transform.GetComponent<S_Movement_TF>().speed = currentSpeed;
 		players[1].transform.GetComponent<S_Movement_TF>().speed = currentSpeed;
+		yield return new WaitForSeconds(1);
+        text2.transform.gameObject.SetActive(false);
 	}
 
 }
