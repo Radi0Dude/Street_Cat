@@ -356,6 +356,17 @@
                 },
                 {
                     "name": "",
+                    "id": "3783a969-f17f-4d22-a061-b2c844aef19f",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "StyleDef",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d0caf459-3911-4690-8b40-8124d2b121cb",
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
@@ -367,11 +378,33 @@
                 },
                 {
                     "name": "",
+                    "id": "589b90ef-58e4-4eaa-b277-1acd22def5bf",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "StyleMid",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4e438a63-a4bb-40b9-8385-145cc324246a",
                     "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "StyleAtck",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "434f939d-804b-4d6a-aa6b-a58cda239280",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "StyleAtck",
                     "isComposite": false,
                     "isPartOfComposite": false

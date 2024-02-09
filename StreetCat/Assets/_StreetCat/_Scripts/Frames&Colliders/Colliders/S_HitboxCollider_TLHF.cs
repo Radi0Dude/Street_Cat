@@ -83,14 +83,20 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 			case 1:
 				mats.color = Color.green;
 				M.transform.gameObject.SetActive(true);
+				D.transform.gameObject.SetActive(false);
+				A.transform.gameObject.SetActive(false);
 				break;
 			case 2:
 				mats.color = Color.red;
                 D.transform.gameObject.SetActive(true);
+                A.transform.gameObject.SetActive(false);
+                M.transform.gameObject.SetActive(false);
                 break;
 			case 3:
 				mats.color = Color.blue;
                 A.transform.gameObject.SetActive(true);
+                D.transform.gameObject.SetActive(false);
+                M.transform.gameObject.SetActive(false);
                 break;
 
 		}
