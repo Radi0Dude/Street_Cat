@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 6474783782894605965}
   - component: {fileID: 222873867911186614}
   m_Layer: 7
-  m_Name: PushBox
+  m_Name: InteractTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -78,12 +78,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.3879795, y: 1.1438334, z: 1}
+  m_Center: {x: -0.020720005, y: 0.071916305, z: 0}
 --- !u!1 &2432049741064005911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1305,6 +1305,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: fb12125a-5257-4bc4-8e67-657fb2c2db14
     m_ActionName: Player/StyleAtck[/XInputControllerWindows/dpad/right]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ce27eca-5a8d-4c20-8688-8fe5d36fa3d2
+    m_ActionName: Player/Intterract[/Keyboard/e,/XInputControllerWindows/dpad/down]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1328,6 +1332,9 @@ MonoBehaviour:
   hurtBoxLayer: HurtBox
   hurtBoxTag: HitBox
   mats: {fileID: 2100000, guid: e9571cb6395550344bdf9abc11a966ca, type: 2}
+  D: {fileID: 0}
+  M: {fileID: 0}
+  A: {fileID: 0}
 --- !u!1 &8640882561948836774
 GameObject:
   m_ObjectHideFlags: 0
