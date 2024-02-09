@@ -33,7 +33,9 @@ public class S_Movement_TF : MonoBehaviour
 	string animatorMoveName;
 
 	S_CheckAmountOfPlayers_TLHF checAmount;
+	Vector3 movement;
 
+	int checkAmountPlayers;
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
@@ -41,7 +43,9 @@ public class S_Movement_TF : MonoBehaviour
 		if(checAmount.amountOfPlayers == 2)
 		{
 			transform.rotation = Quaternion.Euler(0, 180, 0);
+			
 		}
+		checkAmountPlayers = checAmount.amountOfPlayers;
 	}
 	public void OnMove(InputAction.CallbackContext callbackContext)
 	{
@@ -96,7 +100,16 @@ public class S_Movement_TF : MonoBehaviour
 			collision = true;
 			moveDir = 0;
 		}
-		Vector3 movement = new Vector3(moveDir * speed, 0, 0) * Time.deltaTime;
+		if (checkAmountPlayers == 2)
+		{
+			movement = new Vector3(-moveDir * speed, 0, 0) * Time.deltaTime;
+		}
+
+		else
+		{
+			movement = new Vector3(moveDir * speed, 0, 0) * Time.deltaTime;
+		}
+
 
 		transform.Translate(movement);
 	}
