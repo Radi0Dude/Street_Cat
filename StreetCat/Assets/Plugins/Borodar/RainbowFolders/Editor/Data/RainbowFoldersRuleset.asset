@@ -365,10 +365,10 @@ MonoBehaviour:
     Key: Assets/_StreetCat/_z Animation
     Ordinal: 29
     Priority: 0
-    IconType: 2580
+    IconType: 2080
     SmallIcon: {fileID: 0}
     LargeIcon: {fileID: 0}
-    IsIconRecursive: 0
+    IsIconRecursive: 1
     BackgroundType: 130
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
@@ -406,6 +406,18 @@ MonoBehaviour:
     LargeIcon: {fileID: 0}
     IsIconRecursive: 0
     BackgroundType: 0
+    BackgroundTexture: {fileID: 0}
+    IsBackgroundRecursive: 0
+    IsHidden: 0
+  - Type: 1
+    Key: Assets/_StreetCat/_z Animation/Fixed Animations/Deprecated/Baked
+    Ordinal: 33
+    Priority: 0
+    IconType: 2080
+    SmallIcon: {fileID: 0}
+    LargeIcon: {fileID: 0}
+    IsIconRecursive: 0
+    BackgroundType: 110
     BackgroundTexture: {fileID: 0}
     IsBackgroundRecursive: 0
     IsHidden: 0
