@@ -445,7 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: 2d814b46d53599c47a165d18350b484f, type: 2}
-  isGlobal: 0
+  isGlobal: 1
   blendDistance: 0
   weight: 1
   priority: 0
@@ -4919,6 +4919,7 @@ GameObject:
   - component: {fileID: 1349951865}
   - component: {fileID: 1349951870}
   - component: {fileID: 1349951871}
+  - component: {fileID: 1349951872}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5127,6 +5128,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 54b8d90b-51e4-44f6-bf8f-ac1e48236484
     m_ActionName: Player/KickAttack
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: afa9928a-af61-409d-8f0b-b690ae72f0e9
+    m_ActionName: Player/KickAttackLow[/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -5144,6 +5149,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc7c5c82cafb0c4a86fd7d3c4762724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1349951872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349951864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f3b68480092fc944a73492f3799eef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  healthSlider: {fileID: 1263950852}
 --- !u!1 &1439896934
 GameObject:
   m_ObjectHideFlags: 0
