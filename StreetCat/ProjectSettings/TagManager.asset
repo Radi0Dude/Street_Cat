@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - CameraPoint
   - HurtBox
+  - Interract
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - PushBox
   - HitBox
   - HurtBox
-  - 
+  - Interract
   - 
   - 
   - 

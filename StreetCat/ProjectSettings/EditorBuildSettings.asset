@@ -11,5 +11,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_StreetCat/Scenes/Tobias/Prototyping_TF.unity
     guid: f1882e86cf92da9468b0fdf6da17dd20
+  - enabled: 1
+    path: Assets/_StreetCat/Scenes/MainGame/DetectiveOffice.unity
+    guid: d3034d15adad7194697283f9c4004c21
+  - enabled: 1
+    path: Assets/_StreetCat/Scenes/MainGame/HotelCorridor.unity
+    guid: 8c8395ae749c2cb4d9456309cdec4eb3
+  - enabled: 1
+    path: Assets/_StreetCat/Scenes/MainGame/HotelLooby.unity
+    guid: a0c44114930652f439d7a68ebec6733e
+  - enabled: 1
+    path: Assets/_StreetCat/Scenes/MainGame/HotelRoom.unity
+    guid: 05903d53fd673fa49ba484e575439dd6
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: d67ad0740e08401409ab226727746ec7, type: 2}

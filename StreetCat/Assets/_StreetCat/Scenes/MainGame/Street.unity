@@ -4920,6 +4920,7 @@ GameObject:
   - component: {fileID: 1349951870}
   - component: {fileID: 1349951871}
   - component: {fileID: 1349951872}
+  - component: {fileID: 1349951873}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -5132,6 +5133,34 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: afa9928a-af61-409d-8f0b-b690ae72f0e9
     m_ActionName: Player/KickAttackLow[/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bd57d0a1-d982-4d7f-89d0-c7c7c105d73e
+    m_ActionName: Player/StyleDef[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e8983023-2f04-4519-87d8-b720b961df45
+    m_ActionName: Player/StyleMid[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fb12125a-5257-4bc4-8e67-657fb2c2db14
+    m_ActionName: Player/StyleAtck[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1349951873}
+        m_TargetAssemblyTypeName: S_Interract_JPM, Assembly-CSharp
+        m_MethodName: Interract
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Collider, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4ce27eca-5a8d-4c20-8688-8fe5d36fa3d2
+    m_ActionName: Player/Intterract[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -5163,6 +5192,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 10
   healthSlider: {fileID: 1263950852}
+--- !u!114 &1349951873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1349951864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca7b70fd7cb18e44923929db3c5e1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractLayer: Interract
 --- !u!1 &1439896934
 GameObject:
   m_ObjectHideFlags: 0
@@ -5570,6 +5612,73 @@ Transform:
   - {fileID: 1343385298}
   m_Father: {fileID: 777505991}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1681808792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1681808793}
+  - component: {fileID: 1681808795}
+  - component: {fileID: 1681808794}
+  m_Layer: 10
+  m_Name: HotelDoor
+  m_TagString: Interract
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1681808793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681808792}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.736, y: -0.447, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1942012081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1681808794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681808792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63645fe282e97934ea77eab5a27c6df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: HotelLooby
+--- !u!65 &1681808795
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1681808792}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7402522, y: 0.5071309, z: 0.5055}
+  m_Center: {x: -0.12987384, y: 0.24643436, z: 0.02369115}
 --- !u!1 &1722093668
 GameObject:
   m_ObjectHideFlags: 0
@@ -6299,7 +6408,8 @@ Transform:
   m_LocalPosition: {x: -0.06000018, y: 0.61000013, z: -15.52}
   m_LocalScale: {x: 4.543876, y: 8.687646, z: 5.949}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1681808793}
   m_Father: {fileID: 403096511}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1942012082
