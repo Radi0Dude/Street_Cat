@@ -41,9 +41,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6474783782894605965}
   - component: {fileID: 222873867911186614}
-  m_Layer: 7
+  m_Layer: 10
   m_Name: InteractTrigger
-  m_TagString: Untagged
+  m_TagString: Interract
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -977,6 +977,7 @@ GameObject:
   - component: {fileID: 3740231763785016620}
   - component: {fileID: 7420686379546451732}
   - component: {fileID: 7804790791943541708}
+  - component: {fileID: 6884960033941613058}
   m_Layer: 0
   m_Name: MainGuyPrefab
   m_TagString: Player
@@ -1335,6 +1336,20 @@ MonoBehaviour:
   D: {fileID: 0}
   M: {fileID: 0}
   A: {fileID: 0}
+--- !u!114 &6884960033941613058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568691765980693359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca7b70fd7cb18e44923929db3c5e1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interractLayer: Interract
+  thisInteract: {fileID: 222873867911186614}
 --- !u!1 &8640882561948836774
 GameObject:
   m_ObjectHideFlags: 0

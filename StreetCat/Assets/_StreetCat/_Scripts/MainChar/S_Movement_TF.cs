@@ -68,7 +68,7 @@ public class S_Movement_TF : MonoBehaviour
 
 		if (horizontal > 0)
 		{
-			rayDir = 0.52f;
+			//rayDir = 0.52f;
 			
 			moveDir = horizontal;
 			debugRayDir = transform.right;
@@ -77,7 +77,7 @@ public class S_Movement_TF : MonoBehaviour
 		}
 		if (horizontal < 0)
 		{
-			rayDir = 0.52f;
+			//rayDir = 0.52f;
 
 			moveDir = horizontal;
 			debugRayDir = -transform.right;
