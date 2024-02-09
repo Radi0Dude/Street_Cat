@@ -74,6 +74,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8848582190642662443}
   m_SourcePrefab: {fileID: 100100000, guid: 6f694317a7c00ae4ab53f8b130570723, type: 3}
+--- !u!95 &3971774249337387366 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 6f694317a7c00ae4ab53f8b130570723, type: 3}
+  m_PrefabInstance: {fileID: 7382532333750764791}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7689174924992313766 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f694317a7c00ae4ab53f8b130570723, type: 3}
@@ -96,7 +101,7 @@ MonoBehaviour:
   moveAmount: {x: 0, y: 0}
   moveDir: 0
   horizontal: 0
-  animator: {fileID: 0}
+  animator: {fileID: 3971774249337387366}
   animatorMoveName: Move_X
 --- !u!114 &6568385726509281488
 MonoBehaviour:
@@ -113,6 +118,10 @@ MonoBehaviour:
   attackHitboxes: []
   hurtBoxLayer: Default
   hurtBoxTag: Default
+  mats: {fileID: 0}
+  D: {fileID: 0}
+  M: {fileID: 0}
+  A: {fileID: 0}
 --- !u!114 &8848582190642662443
 MonoBehaviour:
   m_ObjectHideFlags: 0
