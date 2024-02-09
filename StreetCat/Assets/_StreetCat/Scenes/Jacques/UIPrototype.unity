@@ -382,9 +382,9 @@ MonoBehaviour:
   hurtBoxLayer: Default
   hurtBoxTag: Default
   mats: {fileID: 0}
-  D: {fileID: 0}
-  M: {fileID: 0}
-  A: {fileID: 0}
+  D: {fileID: 1601853327}
+  M: {fileID: 808529684}
+  A: {fileID: 1454793578}
 --- !u!4 &906603354
 Transform:
   m_ObjectHideFlags: 0
