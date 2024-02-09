@@ -76,6 +76,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Intterract",
+                    "type": "Button",
+                    "id": "4ce27eca-5a8d-4c20-8688-8fe5d36fa3d2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -356,11 +365,33 @@
                 },
                 {
                     "name": "",
+                    "id": "3783a969-f17f-4d22-a061-b2c844aef19f",
+                    "path": "<Keyboard>/1",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "StyleDef",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d0caf459-3911-4690-8b40-8124d2b121cb",
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
+                    "action": "StyleMid",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "589b90ef-58e4-4eaa-b277-1acd22def5bf",
+                    "path": "<Keyboard>/2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
                     "action": "StyleMid",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -373,6 +404,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "StyleAtck",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "434f939d-804b-4d6a-aa6b-a58cda239280",
+                    "path": "<Keyboard>/3",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "StyleAtck",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cf562174-c97e-42e5-9cee-55ab2df8738d",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Intterract",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "07a5e63d-dd32-40eb-b315-86a11d95d49d",
+                    "path": "<Gamepad>/dpad/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Intterract",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
