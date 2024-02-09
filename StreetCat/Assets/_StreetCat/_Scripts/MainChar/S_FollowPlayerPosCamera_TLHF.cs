@@ -33,6 +33,7 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	{
 		
 		//playerOnePos = null;
+
 		playerTwoPos = null;
 		hasMultiplePlayers = false;
 
@@ -52,6 +53,7 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 		else if (GameObject.FindGameObjectsWithTag(playertag).Length == 1)
 		{
 			playerOnePos = GameObject.FindGameObjectsWithTag(playertag)[0].transform;
+			playerOnePos.position = this.transform.position;
 			playerTwoPos = null;
 			OnSpawnPositionOnePlayer();
 			hasMultiplePlayers = false;

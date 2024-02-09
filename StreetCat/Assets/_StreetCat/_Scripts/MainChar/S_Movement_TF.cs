@@ -40,6 +40,7 @@ public class S_Movement_TF : MonoBehaviour
 	{
 		animator = GetComponent<Animator>();
 		checAmount = GameObject.Find("PlayerChecker").transform.GetComponent<S_CheckAmountOfPlayers_TLHF>();
+		
 		if(checAmount.amountOfPlayers == 2)
 		{
 			transform.rotation = Quaternion.Euler(0, 180, 0);
