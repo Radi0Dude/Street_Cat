@@ -32,7 +32,7 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	private void Start()
 	{
 		
-		playerOnePos = null;
+		//playerOnePos = null;
 		playerTwoPos = null;
 		hasMultiplePlayers = false;
 
