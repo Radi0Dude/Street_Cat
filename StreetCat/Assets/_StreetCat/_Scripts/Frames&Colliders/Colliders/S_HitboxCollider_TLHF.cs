@@ -17,9 +17,14 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField]
 	string hurtBoxTag;
 
+	int styleChanger;
+
 	float attackDamage;
 	bool cooldownMidhAttack;
 	bool cooldownLowAttack;
+
+	[SerializeField]
+	Material mats;
 
 	public void MidAttaclKick()
 	{
@@ -44,8 +49,39 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 
 	}
 
+	public void StyleMid()
+	{
+		styleChanger = 1;
+	}
+	public void StyleDef()
+	{
+		styleChanger = 2;
+	}
+	public void StyleAtck()
+	{
+		styleChanger = 3;
+	}
+
+	public void StyleChanger()
+	{
+		switch(styleChanger)
+		{
+			case 1:
+				mats.color = Color.green;
+				break;
+			case 2:
+				mats.color = Color.red;
+				break;
+			case 3:
+				mats.color = Color.blue;
+				break;
+
+		}
+	}
+
 	private void Update()
 	{
+		StyleChanger();
 		//When frameData is done i can add the whole thing here or to a fixedUpdate
 	}
 

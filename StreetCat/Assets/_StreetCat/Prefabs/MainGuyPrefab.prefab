@@ -802,6 +802,54 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: afa9928a-af61-409d-8f0b-b690ae72f0e9
     m_ActionName: Player/KickAttackLow[/XInputControllerWindows/buttonSouth,/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7804790791943541708}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: StyleDef
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bd57d0a1-d982-4d7f-89d0-c7c7c105d73e
+    m_ActionName: Player/StyleDef[/XInputControllerWindows/dpad/left]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7804790791943541708}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: StyleMid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e8983023-2f04-4519-87d8-b720b961df45
+    m_ActionName: Player/StyleMid[/XInputControllerWindows/dpad/up]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7804790791943541708}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: StyleAtck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fb12125a-5257-4bc4-8e67-657fb2c2db14
+    m_ActionName: Player/StyleAtck[/XInputControllerWindows/dpad/right]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -824,3 +872,4 @@ MonoBehaviour:
   - {fileID: 5556535607125984548}
   hurtBoxLayer: HurtBox
   hurtBoxTag: HitBox
+  mats: {fileID: 2100000, guid: e9571cb6395550344bdf9abc11a966ca, type: 2}
