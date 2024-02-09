@@ -2,6 +2,7 @@ using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class S_HealthAndDamage_TLHF : MonoBehaviour
@@ -29,5 +30,15 @@ public class S_HealthAndDamage_TLHF : MonoBehaviour
 		}
     }
 
-	
+	private void OnBecameInvisible()
+	{
+		StartCoroutine(Inpact());
+	}
+
+	IEnumerator Inpact()
+	{
+
+		yield return new WaitForSeconds(.25f);
+	}
+
 }
