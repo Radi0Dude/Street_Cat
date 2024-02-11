@@ -1,6 +1,3 @@
-Rendering/Blending/Traditional Fade;ed1b6067028b7954795c81e6bf01b79c
-Rendering/Double Sided;1080d7f1b2a986b4c97921a6ec4165d6
-Rendering/Reduce Clip Distance;16015d7685d651f499367599c40abd08
 Rendering/RenderTargetsAlphaFix;a8afcc492d1d60140b3f7b38f372f420
 Shading/Clear Coat/Shiny;6382f88be2e476c4eaedf94602a16b32
 Shading/Cubemap/Skybox;5d8da54b7658ecb4a82a6ee900d654a0
