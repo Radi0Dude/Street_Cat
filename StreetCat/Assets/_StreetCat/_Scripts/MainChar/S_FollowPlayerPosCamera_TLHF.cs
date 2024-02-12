@@ -95,7 +95,6 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	private void OnSpawnPositionOnePlayer()
 	{
 		transform.position =  new Vector3(amountToSpawnInFront + playerOnePos.position.x, 0, playerOnePos.position.z);
-		Debug.Log(new Vector3(amountToSpawnInFront + playerOnePos.position.x, 0, playerOnePos.position.z));
 	}
 	
 	private void CalculateDistancePlayerOne()
