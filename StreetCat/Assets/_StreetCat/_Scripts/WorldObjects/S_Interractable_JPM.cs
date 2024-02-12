@@ -9,7 +9,7 @@ public class S_Interractable_JPM : MonoBehaviour
     [Scene]
     [SerializeField]
     private string sceneName;
-    private void Interractable()
+    public void Interractable()
     {
         SceneManager.LoadScene(sceneName);
     }

@@ -34,16 +34,25 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 		
 		//playerOnePos = null;
 
-		playerTwoPos = null;
-		hasMultiplePlayers = false;
-
+	
+		
+			PlayerNotJoinedEvent();
+		
 
 	}
 
+	public void PlayerNotJoinedEvent()
+	{
+		this.transform.position = playerOnePos.position;
+		playerTwoPos = null;		
+		hasMultiplePlayers = false;	
+		hasMoved = playerOnePos.position;
+		OnSpawnPositionOnePlayer();
+
+
+	}
 	public void PlayerJoinedEvent()
 	{
-		pointPos = GameObject.FindGameObjectWithTag(pointTag).transform;
-		Debug.Log(GameObject.FindGameObjectsWithTag(playertag));
 		if (GameObject.FindGameObjectsWithTag(playertag).Length >= 2)
 		{
 			playerOnePos = GameObject.FindGameObjectsWithTag(playertag)[0].transform;
@@ -86,6 +95,7 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	private void OnSpawnPositionOnePlayer()
 	{
 		transform.position =  new Vector3(amountToSpawnInFront + playerOnePos.position.x, 0, playerOnePos.position.z);
+		Debug.Log(new Vector3(amountToSpawnInFront + playerOnePos.position.x, 0, playerOnePos.position.z));
 	}
 	
 	private void CalculateDistancePlayerOne()
@@ -94,15 +104,18 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 		cameraXDistance = pointPos.position.x - transform.position.x;
 		difference = cameraXDistance / playerXDistance;
 
+
 		if(hasMoved.x != playerOnePos.position.x)
 		{
 			float distance = playerOnePos.position.x - hasMoved.x;
 			transform.position = new Vector3(transform.position.x + (distance * difference), 0, playerOnePos.position.z);
+
 			hasMoved.x = playerOnePos.position.x;
 		}
 	}
 	private void CalculateDistancePlayerIfTwo()
 	{
 		transform.position = (playerOnePos.position + playerTwoPos.position) / 2;
+
 	}
 }

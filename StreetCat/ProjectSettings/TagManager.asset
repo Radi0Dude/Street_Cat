@@ -8,6 +8,7 @@ TagManager:
   - CameraPoint
   - HurtBox
   - Interract
+  - InputManager
   layers:
   - Default
   - TransparentFX
