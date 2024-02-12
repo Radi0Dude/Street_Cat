@@ -53,6 +53,10 @@ PrefabInstance:
       value: Detective_ConnectedBones
       objectReference: {fileID: 0}
     - target: {fileID: 1630794972795428178, guid: 6f694317a7c00ae4ab53f8b130570723, type: 3}
+      propertyPath: m_ProbeAnchor
+      value: 
+      objectReference: {fileID: 4798236442066527583}
+    - target: {fileID: 1630794972795428178, guid: 6f694317a7c00ae4ab53f8b130570723, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e03e72b134634ae4c8dfb58352901c5b, type: 2}
@@ -77,6 +81,11 @@ PrefabInstance:
 --- !u!95 &3971774249337387366 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 6f694317a7c00ae4ab53f8b130570723, type: 3}
+  m_PrefabInstance: {fileID: 7382532333750764791}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4798236442066527583 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6565469166185651800, guid: 6f694317a7c00ae4ab53f8b130570723, type: 3}
   m_PrefabInstance: {fileID: 7382532333750764791}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7689174924992313766 stripped

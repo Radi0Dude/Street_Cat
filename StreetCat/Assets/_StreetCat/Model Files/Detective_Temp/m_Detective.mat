@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: m_Detective
-  m_Shader: {fileID: 4800000, guid: 76a3501b6f96f874abe72562d44fcceb, type: 3}
+  m_Shader: {fileID: 4800000, guid: fdf48b740347c3e46aa32ab28176262d, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
@@ -234,6 +234,18 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FlipbookTexArray:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GeoDissolveGradient:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GeoDissolveMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GeoDissolveTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -1397,6 +1409,31 @@ Material:
     - _GITDEWorldOrMesh1: 0
     - _GITDEWorldOrMesh2: 0
     - _GITDEWorldOrMesh3: 0
+    - _GeoDissolveAlpha: 0.25
+    - _GeoDissolveBlendType: 0
+    - _GeoDissolveColorThemeIndex: 0
+    - _GeoDissolveExpansionTime: 1
+    - _GeoDissolveGradientType: 2
+    - _GeoDissolveMaskInvert: 0
+    - _GeoDissolveMaskUV: 0
+    - _GeoDissolveNoiseSpeed: 2
+    - _GeoDissolveNoiseThreshold: 0.7
+    - _GeoDissolvePointToPointDebug: 0
+    - _GeoDissolveShapeType: 1
+    - _GeoDissolveTextureUV: 0
+    - _GeoDissolveTravelDistance: 0.2
+    - _GeoDissolveUV: 0
+    - _GeoDissolveVertexColor: 0
+    - _GeoDissolveWireframeColorToggle: 1
+    - _GeoDissolveWireframeEmissionToggle: 1
+    - _GeoDissolveWireframeOffset: 0.3
+    - _GeoDissolveWireframeOnlyToggle: 0
+    - _GeoDissolveWireframeThickness: 0
+    - _GeoDissolveWireframeToggle: 1
+    - _GeometricDissolveUVLocalPos0: 0
+    - _GeometricDissolveUVLocalPos1: 1
+    - _GeometricDissolveUVWorldPos0: 0
+    - _GeometricDissolveUVWorldPos1: 1
     - _GlitterAngleRange: 90
     - _GlitterBias: 0.8
     - _GlitterBlendType: 0
@@ -2625,6 +2662,24 @@ Material:
     - _UVTileDissolveDiscardAtMax: 1
     - _UVTileDissolveEnabled: 0
     - _UVTileDissolveUV: 0
+    - _UVTileGeoDissolveAlpha_Row0_0: 0
+    - _UVTileGeoDissolveAlpha_Row0_1: 0
+    - _UVTileGeoDissolveAlpha_Row0_2: 0
+    - _UVTileGeoDissolveAlpha_Row0_3: 0
+    - _UVTileGeoDissolveAlpha_Row1_0: 0
+    - _UVTileGeoDissolveAlpha_Row1_1: 0
+    - _UVTileGeoDissolveAlpha_Row1_2: 0
+    - _UVTileGeoDissolveAlpha_Row1_3: 0
+    - _UVTileGeoDissolveAlpha_Row2_0: 0
+    - _UVTileGeoDissolveAlpha_Row2_1: 0
+    - _UVTileGeoDissolveAlpha_Row2_2: 0
+    - _UVTileGeoDissolveAlpha_Row2_3: 0
+    - _UVTileGeoDissolveAlpha_Row3_0: 0
+    - _UVTileGeoDissolveAlpha_Row3_1: 0
+    - _UVTileGeoDissolveAlpha_Row3_2: 0
+    - _UVTileGeoDissolveAlpha_Row3_3: 0
+    - _UVTileGeoDissolveEnabled: 0
+    - _UVTileGeoDissolveUV: 0
     - _Unlit_Intensity: 1
     - _UseLightColor: 1
     - _Use_1stAs2nd: 0
@@ -2723,6 +2778,7 @@ Material:
     - _WriggleSpeed: 0.28
     - _ZTest: 4
     - _ZWrite: 1
+    - _geoEmissionStrength: 1
     - _glitterFrequencyLinearEmissive: 20
     - footer_discord: 0
     - footer_github: 0
@@ -2764,6 +2820,9 @@ Material:
     - g_end_decal3_position: 0
     - g_end_decal_position: 0
     - g_end_deliot: 0
+    - g_end_geoDissolveColorEmission: 0
+    - g_end_geoDissolveMotionSize: 0
+    - g_end_geoDissolveWireframeBorder: 0
     - g_end_hextile: 0
     - g_end_matcap2ApplyToAlpha: 0
     - g_end_matcap3ApplyToAlpha: 0
@@ -2809,6 +2868,9 @@ Material:
     - g_start_decal3_position: 0
     - g_start_decal_position: 0
     - g_start_deliot: 0
+    - g_start_geoDissolveColorEmission: 0
+    - g_start_geoDissolveMotionSize: 0
+    - g_start_geoDissolveWireframeBorder: 0
     - g_start_hextile: 0
     - g_start_matcap2ApplyToAlpha: 0
     - g_start_matcap3ApplyToAlpha: 0
@@ -2920,6 +2982,11 @@ Material:
     - m_end_UVTileDissolveRow1: 0
     - m_end_UVTileDissolveRow2: 0
     - m_end_UVTileDissolveRow3: 0
+    - m_end_UVTileGeoDissolve: 0
+    - m_end_UVTileGeoDissolveRow0: 0
+    - m_end_UVTileGeoDissolveRow1: 0
+    - m_end_UVTileGeoDissolveRow2: 0
+    - m_end_UVTileGeoDissolveRow3: 0
     - m_end_VideoSettings: 0
     - m_end_VoronoiAudioLink: 0
     - m_end_alphaBlending: 0
@@ -2977,6 +3044,7 @@ Material:
     - m_end_videoEffects: 0
     - m_end_voronoi: 0
     - m_end_voronoiRandom: 0
+    - m_geoDissolve: 1
     - m_lightingCategory: 0
     - m_mainCategory: 1
     - m_modifierCategory: 0
@@ -3082,6 +3150,11 @@ Material:
     - m_start_UVTileDissolveRow1: 0
     - m_start_UVTileDissolveRow2: 0
     - m_start_UVTileDissolveRow3: 0
+    - m_start_UVTileGeoDissolve: 0
+    - m_start_UVTileGeoDissolveRow0: 0
+    - m_start_UVTileGeoDissolveRow1: 0
+    - m_start_UVTileGeoDissolveRow2: 0
+    - m_start_UVTileGeoDissolveRow3: 0
     - m_start_VideoSettings: 0
     - m_start_VoronoiAudioLink: 0
     - m_start_alphaBlending: 0
@@ -3641,12 +3714,12 @@ Material:
     - _DetailTexPan: {r: 0, g: 0, b: 0, a: 0}
     - _DetailTint: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveDetailNoisePan: {r: 0, g: 0, b: 0, a: 0}
-    - _DissolveEdgeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DissolveEdgeColor: {r: 1, g: 0, b: 0, a: 1}
     - _DissolveEndPoint: {r: 0, g: 1, b: 0, a: 0}
     - _DissolveMaskPan: {r: 0, g: 0, b: 0, a: 0}
     - _DissolveNoiseTexturePan: {r: 0, g: 0, b: 0, a: 0}
     - _DissolveStartPoint: {r: 0, g: -1, b: 0, a: 0}
-    - _DissolveTextureColor: {r: 1, g: 1, b: 1, a: 1}
+    - _DissolveTextureColor: {r: 1, g: 0, b: 0, a: 1}
     - _DissolveToTexturePan: {r: 0, g: 0, b: 0, a: 0}
     - _DistortionFlowTexture1Pan: {r: 0, g: 0, b: 0, a: 0}
     - _DistortionFlowTexturePan: {r: 0, g: 0, b: 0, a: 0}
@@ -3685,6 +3758,19 @@ Material:
     - _FlipbookScaleOffset: {r: 1, g: 1, b: 0, a: 0}
     - _FlipbookSideOffset: {r: 0, g: 0, b: 0, a: 0}
     - _FlipbookTexArrayPan: {r: 0, g: 0, b: 0, a: 0}
+    - _GeoDissolveColor: {r: 1, g: 0, b: 0, a: 1}
+    - _GeoDissolveColorRange: {r: 0, g: 0.75, b: 0, a: 0}
+    - _GeoDissolveEmissionRange: {r: 0, g: 0.75, b: 0, a: 0}
+    - _GeoDissolveEndPoint: {r: 0, g: 1, b: 0, a: 1}
+    - _GeoDissolveGradientPan: {r: 0, g: 0, b: 0, a: 0}
+    - _GeoDissolveHeightRange: {r: 0, g: 1, b: 0, a: 0.2}
+    - _GeoDissolveMaskPan: {r: 0, g: 0, b: 0, a: 0}
+    - _GeoDissolveNoiseDensity: {r: 3, g: 3, b: 0, a: 0}
+    - _GeoDissolveRotationMax: {r: 400, g: 400, b: 400, a: 1}
+    - _GeoDissolveRotationMin: {r: -400, g: -400, b: -400, a: 1}
+    - _GeoDissolveScaleRange: {r: 1, g: 0, b: 0, a: 1}
+    - _GeoDissolveStartPoint: {r: 0, g: -1, b: 0, a: 1}
+    - _GeoDissolveTexturePan: {r: 0, g: 0, b: 0, a: 0}
     - _GlitterColor: {r: 1, g: 1, b: 1, a: 1}
     - _GlitterColorMapPan: {r: 0, g: 0, b: 0, a: 0}
     - _GlitterMaskPan: {r: 0, g: 0, b: 0, a: 0}
