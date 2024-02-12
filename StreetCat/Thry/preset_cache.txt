@@ -1,5 +1,3 @@
-Rendering/RenderTargetsAlphaFix;a8afcc492d1d60140b3f7b38f372f420
-Shading/Clear Coat/Shiny;6382f88be2e476c4eaedf94602a16b32
 Shading/Cubemap/Skybox;5d8da54b7658ecb4a82a6ee900d654a0
 Shading/Environmental Rim/Basic Rim;9ddde5bb2f543cb41bc77667dbd4ef0a
 Shading/Shading/Cloth;2807a42a52df1c44d97cf5e17934fb66
