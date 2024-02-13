@@ -19,25 +19,29 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField]
 	string hurtBoxTag;
 
-	int styleChanger;
+	public int styleChanger;
 
-	float attackDamage;
+	public float attackDamageMultiplier = 1;
 	bool cooldownMidhAttack;
 	bool cooldownLowAttack;
 
-	[SerializeField]
+	
 	Material mats;
 
 	[SerializeField]private TextMeshProUGUI D;
     [SerializeField] private TextMeshProUGUI M;
     [SerializeField] private TextMeshProUGUI A;
 
-	
 
+	Renderer renderer;
 
     private void Start()
     {
-        D.transform.gameObject.SetActive(false);
+		renderer = GetComponent<Renderer>();
+		mats = Instantiate(Resources.Load("Green") as Material);
+		renderer.material = mats;
+
+		D.transform.gameObject.SetActive(false);
         M.transform.gameObject.SetActive(false);
         A.transform.gameObject.SetActive(false);
     }
@@ -83,22 +87,22 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		switch(styleChanger)
 		{
 			case 1:
-				mats.color = Color.green;
-				M.transform.gameObject.SetActive(true);
-				D.transform.gameObject.SetActive(false);
-				A.transform.gameObject.SetActive(false);
+				renderer.material.color = Color.green;
+				//M.transform.gameObject.SetActive(true);
+				//D.transform.gameObject.SetActive(false);
+				//A.transform.gameObject.SetActive(false);
 				break;
 			case 2:
-				mats.color = Color.red;
-                D.transform.gameObject.SetActive(true);
-                A.transform.gameObject.SetActive(false);
-                M.transform.gameObject.SetActive(false);
+				renderer.material.color = Color.red;
+                //D.transform.gameObject.SetActive(true);
+                //A.transform.gameObject.SetActive(false);
+                //M.transform.gameObject.SetActive(false);
                 break;
 			case 3:
-				mats.color = Color.blue;
-                A.transform.gameObject.SetActive(true);
-                D.transform.gameObject.SetActive(false);
-                M.transform.gameObject.SetActive(false);
+				renderer.material.color = Color.blue;
+                //A.transform.gameObject.SetActive(true);
+                //D.transform.gameObject.SetActive(false);
+                //M.transform.gameObject.SetActive(false);
                 break;
 
 		}
@@ -106,7 +110,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 
 	private void Update()
 	{
-		Debug.Log("cooldown mid attack is" + cooldownMidhAttack);
+
 		StyleChanger();
 		//When frameData is done i can add the whole thing here or to a fixedUpdate
 		if (cooldownLowAttack)
@@ -141,7 +145,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 			{
 
 				case "HurtBox":
-					attackDamage = 30;
+					attackDamage = 30 * attackDamageMultiplier;
 					Debug.Log("Herlo");
 				break;
 				default:

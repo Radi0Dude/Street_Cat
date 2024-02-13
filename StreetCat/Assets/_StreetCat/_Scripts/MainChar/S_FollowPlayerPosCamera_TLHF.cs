@@ -35,8 +35,11 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 		//playerOnePos = null;
 
 	
-		
+		if (GameObject.FindGameObjectWithTag("Player"))
+		{
 			PlayerNotJoinedEvent();
+		}
+
 		
 
 	}
