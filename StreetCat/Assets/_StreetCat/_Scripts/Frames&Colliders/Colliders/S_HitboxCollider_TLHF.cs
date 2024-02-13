@@ -32,6 +32,8 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
     [SerializeField] private TextMeshProUGUI M;
     [SerializeField] private TextMeshProUGUI A;
 
+	
+
 
     private void Start()
     {
@@ -44,18 +46,18 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		if(!cooldownMidhAttack)
 		{
 			kickAttack(attackHitboxes[0]);
-			StartCoroutine(Cooldown());
+			StartCoroutine(CooldownMid());
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Mid attack)");
 		}
 
-
+		
 	}
 	public void LowAttackKick()
 	{
 		if (!cooldownLowAttack)
 		{
 			kickAttack(attackHitboxes[1]);
-			StartCoroutine(Cooldown());		
+			StartCoroutine(CooldownLow());		
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Low arrack)");
 		}
 
@@ -104,8 +106,27 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 
 	private void Update()
 	{
+		Debug.Log("cooldown mid attack is" + cooldownMidhAttack);
 		StyleChanger();
 		//When frameData is done i can add the whole thing here or to a fixedUpdate
+		if (cooldownLowAttack)
+		{
+			attackHitboxes[1].transform.gameObject.GetComponent<MeshRenderer>().enabled = true;
+		}
+		else
+		{
+			attackHitboxes[1].transform.gameObject.GetComponent<MeshRenderer>().enabled = false;
+		}
+
+		if (cooldownMidhAttack)
+		{
+			attackHitboxes[0].transform.gameObject.GetComponent<MeshRenderer>().enabled = true;
+		}
+		else
+		{
+			attackHitboxes[0].transform.gameObject.GetComponent<MeshRenderer>().enabled = false;
+		}
+
 	}
 
 	private void kickAttack(Collider collider)
@@ -132,12 +153,16 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		}
 	}
 
-	IEnumerator Cooldown()
+	IEnumerator CooldownMid()
+	{
+		cooldownMidhAttack = true;		
+		yield return new WaitForSeconds(0.5f);
+		cooldownMidhAttack = false;
+	}
+	IEnumerator CooldownLow()
 	{
 		cooldownLowAttack = true;
-		cooldownMidhAttack = true;
-		yield return new WaitForSeconds(1);
-		cooldownMidhAttack = false;
+		yield return new WaitForSeconds(0.5f);
 		cooldownLowAttack = false;
 	}
 }
