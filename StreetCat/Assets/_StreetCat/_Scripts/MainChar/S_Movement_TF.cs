@@ -36,6 +36,14 @@ public class S_Movement_TF : MonoBehaviour
 	Vector3 movement;
 
 	int checkAmountPlayers;
+
+	[SerializeField]
+	string animNameForward;
+	[SerializeField]
+	string animNameBackward;
+	[SerializeField]
+	string animNameIdle;
+
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
@@ -65,6 +73,7 @@ public class S_Movement_TF : MonoBehaviour
 		if (animator)
 		{
 			animator.SetFloat(animatorMoveName, moveAmount.x);
+			
 		}
 
 		if (horizontal > 0)
@@ -75,6 +84,7 @@ public class S_Movement_TF : MonoBehaviour
 			debugRayDir = transform.right;
 			raySomething = 1;
 			//Maybe add animation here, get a check to see which way the animation was last frame
+			animator.SetTrigger(animNameForward);
 		}
 		if (horizontal < 0)
 		{
@@ -84,11 +94,13 @@ public class S_Movement_TF : MonoBehaviour
 			debugRayDir = -transform.right;
 			raySomething = -1;
 			//Maybe add animation here, get a check to see which way the animation was last frame
+			animator.SetTrigger(animNameBackward);
 		}
 		else if (horizontal == 0)
 		{
 			moveDir = 0;
 			//Idle would go here!!
+			animator.SetTrigger(animNameIdle);
 		}
 		Debug.DrawRay(transform.position, transform.TransformDirection(debugRayDir) * 10f, Color.green);
 
