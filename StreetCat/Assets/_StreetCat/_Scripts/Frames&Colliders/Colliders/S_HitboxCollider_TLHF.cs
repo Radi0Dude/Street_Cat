@@ -43,8 +43,9 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		if(!cooldownMidhAttack)
 		{
+
 			kickAttack(attackHitboxes[0]);
-			StartCoroutine(Cooldown());
+			StartCoroutine(CooldownHigh());
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Mid attack)");
 		}
 
@@ -54,11 +55,12 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		if (!cooldownLowAttack)
 		{
+
 			kickAttack(attackHitboxes[1]);
-			StartCoroutine(Cooldown());		
+			StartCoroutine(CooldownLow());		
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Low arrack)");
 		}
-
+		
 
 	}
 
@@ -106,6 +108,23 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		StyleChanger();
 		//When frameData is done i can add the whole thing here or to a fixedUpdate
+
+		if(!cooldownLowAttack)
+		{
+			attackHitboxes[0].transform.gameObject.SetActive(false);
+		}
+		else
+		{
+			attackHitboxes[0].transform.gameObject.SetActive(true);
+		}
+		if(!cooldownMidhAttack)
+		{
+			attackHitboxes[1].transform.gameObject.SetActive(false);
+		}
+		else
+		{
+			attackHitboxes[1].transform.gameObject.SetActive(true);
+		}
 	}
 
 	private void kickAttack(Collider collider)
@@ -132,12 +151,16 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		}
 	}
 
-	IEnumerator Cooldown()
+	IEnumerator CooldownHigh()
+	{
+		cooldownMidhAttack = true;
+		yield return new WaitForSeconds(0.5f);
+		cooldownMidhAttack = false;
+	}
+	IEnumerator CooldownLow()
 	{
 		cooldownLowAttack = true;
-		cooldownMidhAttack = true;
-		yield return new WaitForSeconds(1);
-		cooldownMidhAttack = false;
+		yield return new WaitForSeconds(0.5f);
 		cooldownLowAttack = false;
 	}
 }

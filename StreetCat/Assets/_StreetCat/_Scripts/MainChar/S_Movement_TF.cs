@@ -103,12 +103,12 @@ public class S_Movement_TF : MonoBehaviour
 		}
 		if (checkAmountPlayers == 2)
 		{
-			movement = new Vector3(-moveDir * speed, 0, 0) * Time.deltaTime;
+			movement = new Vector3(0, 0, -moveDir * speed) * Time.deltaTime;
 		}
 
 		else
 		{
-			movement = new Vector3(moveDir * speed, 0, 0) * Time.deltaTime;
+			movement = new Vector3(0, 0, moveDir * speed) * Time.deltaTime;
 		}
 
 
