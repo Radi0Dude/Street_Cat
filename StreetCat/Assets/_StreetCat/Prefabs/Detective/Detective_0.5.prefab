@@ -161,6 +161,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e03e72b134634ae4c8dfb58352901c5b, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3a88f2a26c5102541b58bbf27dc2178a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -207,6 +211,9 @@ MonoBehaviour:
   horizontal: 0
   animator: {fileID: 2202630288282762770}
   animatorMoveName: Move_X
+  animNameForward: 
+  animNameBackward: 
+  animNameIdle: 
 --- !u!114 &152807630756420622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -222,8 +229,7 @@ MonoBehaviour:
   attackHitboxes: []
   hurtBoxLayer: Default
   hurtBoxTag: Default
-  styleChanger: 0
-  attackDamageMultiplier: 1
+  mats: {fileID: 0}
   D: {fileID: 0}
   M: {fileID: 0}
   A: {fileID: 0}
