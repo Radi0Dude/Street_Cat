@@ -211,9 +211,7 @@ MonoBehaviour:
   horizontal: 0
   animator: {fileID: 2202630288282762770}
   animatorMoveName: Move_X
-  animNameForward: 
-  animNameBackward: 
-  animNameIdle: 
+  turnAnim: tr_Turn
 --- !u!114 &152807630756420622
 MonoBehaviour:
   m_ObjectHideFlags: 0
