@@ -63,7 +63,7 @@ PrefabInstance:
     - target: {fileID: 5866666021909216657, guid: 6f694317a7c00ae4ab53f8b130570723, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: f17ff3417e3837e469e71fd5ef465555, type: 2}
+      objectReference: {fileID: 9100000, guid: 3a88f2a26c5102541b58bbf27dc2178a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -127,7 +127,8 @@ MonoBehaviour:
   attackHitboxes: []
   hurtBoxLayer: Default
   hurtBoxTag: Default
-  mats: {fileID: 0}
+  styleChanger: 0
+  attackDamageMultiplier: 1
   D: {fileID: 0}
   M: {fileID: 0}
   A: {fileID: 0}
@@ -158,7 +159,7 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 333485568776256102}
         m_TargetAssemblyTypeName: S_Movement_TF, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
@@ -240,6 +241,22 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: afa9928a-af61-409d-8f0b-b690ae72f0e9
     m_ActionName: Player/KickAttackLow[/Keyboard/k]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bd57d0a1-d982-4d7f-89d0-c7c7c105d73e
+    m_ActionName: Player/StyleDef[/Keyboard/1]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e8983023-2f04-4519-87d8-b720b961df45
+    m_ActionName: Player/StyleMid[/Keyboard/2]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fb12125a-5257-4bc4-8e67-657fb2c2db14
+    m_ActionName: Player/StyleAtck[/Keyboard/3]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4ce27eca-5a8d-4c20-8688-8fe5d36fa3d2
+    m_ActionName: Player/Intterract[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
