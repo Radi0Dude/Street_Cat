@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &404705572
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -162,7 +162,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9c5e01be647824a4d8a012a4f1dd733c, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5366,10 +5366,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Detective_ConnectedBones
       objectReference: {fileID: 0}
-    - target: {fileID: 8130608559671613861, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: e03e72b134634ae4c8dfb58352901c5b, type: 2}
     - target: {fileID: 8848582190642662443, guid: c64b0b9dd73fe004cab05e0d49492436, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 19
