@@ -19,13 +19,13 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField]
 	string hurtBoxTag;
 
-	int styleChanger;
+	public int styleChanger;
 
-	float attackDamage;
+	public float attackDamageMultiplier = 1;
 	bool cooldownMidhAttack;
 	bool cooldownLowAttack;
 
-	[SerializeField]
+	
 	Material mats;
 
 	[SerializeField]private TextMeshProUGUI D;
@@ -33,9 +33,15 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
     [SerializeField] private TextMeshProUGUI A;
 
 
+	Renderer renderer;
+
     private void Start()
     {
-        D.transform.gameObject.SetActive(false);
+		renderer = GetComponent<Renderer>();
+		mats = Instantiate(Resources.Load("Green") as Material);
+		renderer.material = mats;
+
+		D.transform.gameObject.SetActive(false);
         M.transform.gameObject.SetActive(false);
         A.transform.gameObject.SetActive(false);
     }
@@ -44,18 +50,18 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		if(!cooldownMidhAttack)
 		{
 			kickAttack(attackHitboxes[0]);
-			StartCoroutine(Cooldown());
+			StartCoroutine(CooldownMid());
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Mid attack)");
 		}
 
-
+		
 	}
 	public void LowAttackKick()
 	{
 		if (!cooldownLowAttack)
 		{
 			kickAttack(attackHitboxes[1]);
-			StartCoroutine(Cooldown());		
+			StartCoroutine(CooldownLow());		
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Low arrack)");
 		}
 
@@ -81,22 +87,22 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		switch(styleChanger)
 		{
 			case 1:
-				mats.color = Color.green;
-				M.transform.gameObject.SetActive(true);
-				D.transform.gameObject.SetActive(false);
-				A.transform.gameObject.SetActive(false);
+				renderer.material.color = Color.green;
+				//M.transform.gameObject.SetActive(true);
+				//D.transform.gameObject.SetActive(false);
+				//A.transform.gameObject.SetActive(false);
 				break;
 			case 2:
-				mats.color = Color.red;
-                D.transform.gameObject.SetActive(true);
-                A.transform.gameObject.SetActive(false);
-                M.transform.gameObject.SetActive(false);
+				renderer.material.color = Color.red;
+                //D.transform.gameObject.SetActive(true);
+                //A.transform.gameObject.SetActive(false);
+                //M.transform.gameObject.SetActive(false);
                 break;
 			case 3:
-				mats.color = Color.blue;
-                A.transform.gameObject.SetActive(true);
-                D.transform.gameObject.SetActive(false);
-                M.transform.gameObject.SetActive(false);
+				renderer.material.color = Color.blue;
+                //A.transform.gameObject.SetActive(true);
+                //D.transform.gameObject.SetActive(false);
+                //M.transform.gameObject.SetActive(false);
                 break;
 
 		}
@@ -104,8 +110,27 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 
 	private void Update()
 	{
+
 		StyleChanger();
 		//When frameData is done i can add the whole thing here or to a fixedUpdate
+		if (cooldownLowAttack)
+		{
+			attackHitboxes[1].transform.gameObject.GetComponent<MeshRenderer>().enabled = true;
+		}
+		else
+		{
+			attackHitboxes[1].transform.gameObject.GetComponent<MeshRenderer>().enabled = false;
+		}
+
+		if (cooldownMidhAttack)
+		{
+			attackHitboxes[0].transform.gameObject.GetComponent<MeshRenderer>().enabled = true;
+		}
+		else
+		{
+			attackHitboxes[0].transform.gameObject.GetComponent<MeshRenderer>().enabled = false;
+		}
+
 	}
 
 	private void kickAttack(Collider collider)
@@ -120,7 +145,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 			{
 
 				case "HurtBox":
-					attackDamage = 30;
+					attackDamage = 30 * attackDamageMultiplier;
 					Debug.Log("Herlo");
 				break;
 				default:
@@ -132,12 +157,16 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		}
 	}
 
-	IEnumerator Cooldown()
+	IEnumerator CooldownMid()
+	{
+		cooldownMidhAttack = true;		
+		yield return new WaitForSeconds(0.5f);
+		cooldownMidhAttack = false;
+	}
+	IEnumerator CooldownLow()
 	{
 		cooldownLowAttack = true;
-		cooldownMidhAttack = true;
-		yield return new WaitForSeconds(1);
-		cooldownMidhAttack = false;
+		yield return new WaitForSeconds(0.5f);
 		cooldownLowAttack = false;
 	}
 }
