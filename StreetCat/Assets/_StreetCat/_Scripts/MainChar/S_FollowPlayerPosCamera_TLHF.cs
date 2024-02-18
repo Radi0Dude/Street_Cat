@@ -35,11 +35,8 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 		//playerOnePos = null;
 
 	
-		if (GameObject.FindGameObjectWithTag("Player"))
-		{
+		
 			PlayerNotJoinedEvent();
-		}
-
 		
 
 	}
@@ -97,7 +94,7 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 
 	private void OnSpawnPositionOnePlayer()
 	{
-		transform.position =  new Vector3(amountToSpawnInFront + playerOnePos.position.x, playerOnePos.position.y, playerOnePos.position.z);
+		transform.position =  new Vector3(amountToSpawnInFront + playerOnePos.position.x, 0, playerOnePos.position.z);
 	}
 	
 	private void CalculateDistancePlayerOne()
@@ -110,7 +107,7 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 		if(hasMoved.x != playerOnePos.position.x)
 		{
 			float distance = playerOnePos.position.x - hasMoved.x;
-			transform.position = new Vector3(transform.position.x + (distance * difference), playerOnePos.position.y, playerOnePos.position.z);
+			transform.position = new Vector3(transform.position.x + (distance * difference), 0, playerOnePos.position.z);
 
 			hasMoved.x = playerOnePos.position.x;
 		}

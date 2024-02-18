@@ -347,7 +347,7 @@
                     "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "",
                     "action": "KickAttackLow",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -358,7 +358,7 @@
                     "path": "<Gamepad>/dpad/left",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "StyleDef",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -380,7 +380,7 @@
                     "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "StyleMid",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -402,7 +402,7 @@
                     "path": "<Gamepad>/dpad/right",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Gamepad",
+                    "groups": "",
                     "action": "StyleAtck",
                     "isComposite": false,
                     "isPartOfComposite": false

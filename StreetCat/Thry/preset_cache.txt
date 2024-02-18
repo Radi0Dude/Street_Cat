@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
+Shading/Shading/Cloth;2807a42a52df1c44d97cf5e17934fb66
+Lighting/Full UTS2;b3ea4f0c69d93b14ca1f17342c9502fa
 Lighting/Toon Hard Shadow;b84dedf1d78543840bd79dea015df1bc
 Lighting/Realistic;c307c1f8bf70e944e83e2db5de65c395
+=======
+>>>>>>> Stashed changes
 Shading/Shading/Shade Maps;0dfb68f3451a286408b0be70c899a6c2
 Shading/Shading/lil Toon;b7ef0798bfb2152479b2ec8ace110aee
 Lighting/Maximum Add intensity of 1;ddba49dd4796c0846b8edb9114095558
