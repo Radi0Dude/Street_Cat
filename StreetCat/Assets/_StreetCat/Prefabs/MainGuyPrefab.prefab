@@ -978,6 +978,7 @@ GameObject:
   - component: {fileID: 7420686379546451732}
   - component: {fileID: 7804790791943541708}
   - component: {fileID: 6884960033941613058}
+  - component: {fileID: 2100930447666629025}
   m_Layer: 0
   m_Name: MainGuyPrefab
   m_TagString: Player
@@ -1332,7 +1333,8 @@ MonoBehaviour:
   - {fileID: 5556535607125984548}
   hurtBoxLayer: HurtBox
   hurtBoxTag: HitBox
-  mats: {fileID: 2100000, guid: e9571cb6395550344bdf9abc11a966ca, type: 2}
+  styleChanger: 0
+  attackDamageMultiplier: 1
   D: {fileID: 0}
   M: {fileID: 0}
   A: {fileID: 0}
@@ -1348,8 +1350,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca7b70fd7cb18e44923929db3c5e1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interractLayer: Interract
+  interactTag: 
   thisInteract: {fileID: 222873867911186614}
+--- !u!143 &2100930447666629025
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8568691765980693359}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8640882561948836774
 GameObject:
   m_ObjectHideFlags: 0
