@@ -6,21 +6,22 @@ using UnityEngine.InputSystem;
 
 public class S_CCMovement_TLHF : MonoBehaviour
 {
-    CharacterController controller;
-
-	[SerializeField]
+	[InputAxis]
+	[SerializeField] 
+	private string moveAxis;
+    [SerializeField]
 	private float speed;
-
 	[SerializeField]
 	private Animator animator;
 
-	[InputAxis]
-	[SerializeField] 
-	string moveAxis;
 
-	Vector2 moveAmount;
+	private CharacterController controller;			
+	private Vector2 moveAmount;
+	private Vector3 movement;
+	private float moveChar;
+	private float velocity;
+	private bool grounded;
 
-	float movement;
 
 	private void Start()
 	{
@@ -33,7 +34,20 @@ public class S_CCMovement_TLHF : MonoBehaviour
 	}
 	private void Movement()
 	{
-		movement = moveAmount.x;	
+		grounded = controller.isGrounded;
+
+		moveChar = moveAmount.x;
+		
+		movement = new Vector3(0, 0, moveChar * speed) * Time.deltaTime;
+
+		controller.Move(movement);
+
+		velocity = controller.velocity.z;
+	}
+
+	private void Update()
+	{
+		Movement();
 	}
 
 }
