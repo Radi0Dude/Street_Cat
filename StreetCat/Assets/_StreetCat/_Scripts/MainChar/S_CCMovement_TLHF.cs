@@ -19,8 +19,10 @@ public class S_CCMovement_TLHF : MonoBehaviour
 	[SerializeField]
 	private string fightingSceneName;
 
+	[AnimatorParam("animator")]
 	[SerializeField]
 	private string animatorMoveName;
+	[AnimatorParam("animator")]
 	[SerializeField]
 	private string animatorFightingName;
 
@@ -80,6 +82,7 @@ public class S_CCMovement_TLHF : MonoBehaviour
 		if(SceneManager.GetActiveScene().name == fightingSceneName) 
 		{
 			animator.SetBool(animatorFightingName, true);
+
 		}
 
 	}
