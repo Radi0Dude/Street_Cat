@@ -1264,6 +1264,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4ce27eca-5a8d-4c20-8688-8fe5d36fa3d2
     m_ActionName: Player/Intterract[/Keyboard/e,/XInputControllerWindows/dpad/down]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b0f9bdc0-e3ef-4923-a972-f2752c612443
+    m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1287,9 +1291,6 @@ MonoBehaviour:
   hurtBoxLayer: HurtBox
   hurtBoxTag: HitBox
   mats: {fileID: 0}
-  D: {fileID: 0}
-  M: {fileID: 0}
-  A: {fileID: 0}
 --- !u!114 &6884960033941613058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1342,10 +1343,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd79bf2b4676fed4dba3b904c8aa2274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  moveAxis: Horizontal
   speed: 5
   animator: {fileID: 0}
-  moveAxis: Horizontal
-  velocity: 0
+  fightingSceneName: Menu 1
+  animatorMoveName: 
+  animatorFightingName: 
+  moveAmount: {x: 0, y: 0}
 --- !u!1 &8640882561948836774
 GameObject:
   m_ObjectHideFlags: 0

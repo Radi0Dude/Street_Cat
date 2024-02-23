@@ -349,6 +349,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4ce27eca-5a8d-4c20-8688-8fe5d36fa3d2
     m_ActionName: Player/Intterract[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b0f9bdc0-e3ef-4923-a972-f2752c612443
+    m_ActionName: Player/Pause[/Keyboard/escape]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -372,6 +376,7 @@ MonoBehaviour:
   fightingSceneName: Prototyping_TF
   animatorMoveName: Move_X
   animatorFightingName: Fighting
+  animatorTurn: tr_Turn
   moveAmount: {x: 0, y: 0}
 --- !u!143 &2439394578415577809
 CharacterController:
