@@ -25,15 +25,18 @@ public class S_CCMovement_TLHF : MonoBehaviour
 	[AnimatorParam("animator")]
 	[SerializeField]
 	private string animatorFightingName;
+	[AnimatorParam("animator")]
+	[SerializeField]
+	private string animatorTurn;
 
 	private CharacterController controller;			
 	public Vector2 moveAmount;
 	private Vector3 movement;
 	private float moveChar;
 	private float velocity;
-	private bool grounded;
+	private bool animationDir;
 
-
+	
 
 	private void Start()
 	{
@@ -46,9 +49,6 @@ public class S_CCMovement_TLHF : MonoBehaviour
 	}
 	private void Movement()
 	{
-		grounded = controller.isGrounded;
-
-		
 
 		moveChar = moveAmount.x;
 		
@@ -67,16 +67,28 @@ public class S_CCMovement_TLHF : MonoBehaviour
 		{
 			transform.position = new Vector3(0, this.transform.position.y, this.transform.position.z);
 		}
-		//if(velocity > 0.05f)
-		//{
-		//	transform.rotation = Quaternion.Euler(0, 0, 0);
-		//}
-		//else if (velocity < 0.05f)
-		//{
-		//	transform.rotation = Quaternion.Euler(0, 180, 0);
-		//}
+		if(moveChar > 0)
+		{
+			if(animationDir)
+			{
+				animator.SetTrigger(animatorTurn);
+				animationDir = false;
+			}
+
+		}
+
+		if (moveChar < 0)
+		{
+			if(!animationDir)
+			{			
+				animator.SetTrigger(animatorTurn);
+				animationDir = true;
+			}
+
+		}
 	}
 
+	
 	private void CheckState()
 	{
 		if(SceneManager.GetActiveScene().name == fightingSceneName) 
@@ -90,6 +102,7 @@ public class S_CCMovement_TLHF : MonoBehaviour
 	private void Update()
 	{
 		Movement();
+		
 	}
 
 }
