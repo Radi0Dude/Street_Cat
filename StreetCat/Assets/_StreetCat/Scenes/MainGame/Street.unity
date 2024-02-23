@@ -356,6 +356,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6116983997031705610, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
+      propertyPath: nameOfScene
+      value: Menu 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6116983997031705610, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
       propertyPath: playerOnePos
       value: 
       objectReference: {fileID: 2021491605}
