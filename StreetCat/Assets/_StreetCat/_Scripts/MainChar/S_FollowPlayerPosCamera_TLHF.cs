@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
 public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 {
@@ -29,6 +30,10 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	[SerializeField]
 	string playertag;
 
+	[Scene]
+	[SerializeField]
+	string nameOfScene;
+
 	private void Start()
 	{
 		
@@ -53,30 +58,60 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	}
 	public void PlayerJoinedEvent()
 	{
-		if (GameObject.FindGameObjectsWithTag(playertag).Length >= 2)
+		if(SceneManager.GetActiveScene().name == nameOfScene)
 		{
-			playerOnePos = GameObject.FindGameObjectsWithTag(playertag)[0].transform;
-			playerTwoPos = GameObject.FindGameObjectsWithTag(playertag)[1].transform;
 			hasMultiplePlayers = true;
+			if (GameObject.FindGameObjectsWithTag(playertag).Length >= 2)
+			{
+				playerOnePos = GameObject.FindGameObjectsWithTag(playertag)[0].transform;
+				playerTwoPos = GameObject.FindGameObjectsWithTag(playertag)[1].transform;
+				
+			}
+			else if (GameObject.FindGameObjectsWithTag(playertag).Length == 1)
+			{
+				playerOnePos = GameObject.FindGameObjectsWithTag(playertag)[0].transform;
+				playerOnePos.position = this.transform.position;
+				playerTwoPos = null;
+				OnSpawnPositionOnePlayer();
+
+				hasMoved = playerOnePos.position;
+
+			}
+			else if (GameObject.FindGameObjectsWithTag(playertag).Length < 1)
+			{
+				playerOnePos = null;
+				playerTwoPos = null;
+
+			}
 		}
-		else if (GameObject.FindGameObjectsWithTag(playertag).Length == 1)
+		else
 		{
-			playerOnePos = GameObject.FindGameObjectsWithTag(playertag)[0].transform;
-			playerOnePos.position = this.transform.position;
-			playerTwoPos = null;
-			OnSpawnPositionOnePlayer();
-			hasMultiplePlayers = false;
-			hasMoved = playerOnePos.position;
+			if (GameObject.FindGameObjectsWithTag(playertag).Length >= 2)
+			{
+				playerOnePos = GameObject.FindGameObjectsWithTag(playertag)[0].transform;
+				playerTwoPos = GameObject.FindGameObjectsWithTag(playertag)[1].transform;
+				hasMultiplePlayers = true;
+			}
+			else if (GameObject.FindGameObjectsWithTag(playertag).Length == 1)
+			{
+				playerOnePos = GameObject.FindGameObjectsWithTag(playertag)[0].transform;
+				playerOnePos.position = this.transform.position;
+				playerTwoPos = null;
+				OnSpawnPositionOnePlayer();
+				hasMultiplePlayers = false;
+				hasMoved = playerOnePos.position;
+
+			}
+			else if (GameObject.FindGameObjectsWithTag(playertag).Length < 1)
+			{
+				playerOnePos = null;
+				playerTwoPos = null;
+				hasMultiplePlayers = false;
+			}
 
 		}
-		else if (GameObject.FindGameObjectsWithTag(playertag).Length < 1)
-		{
-			playerOnePos = null;
-			playerTwoPos = null;
-			hasMultiplePlayers = false;
-		}
-
-
+		
+		
 	}
 	private void Update()
 	{
@@ -94,22 +129,22 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 
 	private void OnSpawnPositionOnePlayer()
 	{
-		transform.position =  new Vector3(amountToSpawnInFront + playerOnePos.position.x, 0, playerOnePos.position.z);
+		transform.position =  new Vector3(playerOnePos.position.x, 0, amountToSpawnInFront + playerOnePos.position.z);
 	}
 	
 	private void CalculateDistancePlayerOne()
 	{
-		playerXDistance = pointPos.position.x - playerOnePos.position.x;
-		cameraXDistance = pointPos.position.x - transform.position.x;
+		playerXDistance = pointPos.position.z - playerOnePos.position.z;
+		cameraXDistance = pointPos.position.z - transform.position.z;
 		difference = cameraXDistance / playerXDistance;
 
 
 		if(hasMoved.x != playerOnePos.position.x)
 		{
-			float distance = playerOnePos.position.x - hasMoved.x;
-			transform.position = new Vector3(transform.position.x + (distance * difference), 0, playerOnePos.position.z);
+			float distance = playerOnePos.position.z - hasMoved.z;
+			transform.position = new Vector3(transform.position.x, 0, playerOnePos.position.z + (distance * difference));
 
-			hasMoved.x = playerOnePos.position.x;
+			hasMoved.z = playerOnePos.position.z;
 		}
 	}
 	private void CalculateDistancePlayerIfTwo()
