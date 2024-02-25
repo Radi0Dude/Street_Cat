@@ -449,7 +449,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Walking Turn 180
-  m_Speed: 2.5
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -514368655261069818}
@@ -476,7 +476,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Running Turn 180
-  m_Speed: 2.5
+  m_Speed: 3
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -491222655658891294}
@@ -960,9 +960,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.5
   m_TransitionOffset: 0
-  m_ExitTime: 0.5
+  m_ExitTime: 1
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -982,9 +982,9 @@ AnimatorStateTransition:
   m_Mute: 0
   m_IsExit: 0
   serializedVersion: 3
-  m_TransitionDuration: 0.25
+  m_TransitionDuration: 0.75
   m_TransitionOffset: 0
-  m_ExitTime: 0.5
+  m_ExitTime: 1
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1768,18 +1768,18 @@ AnimatorStateMachine:
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions:
-  - first: {fileID: 7719695695681810554}
-    second:
-    - {fileID: 4250678597414358692}
   - first: {fileID: -2386569976564183250}
     second:
     - {fileID: -6547090026764777947}
-  - first: {fileID: 8020055245862219850}
-    second:
-    - {fileID: 8289954927413749686}
   - first: {fileID: 2023115345255483095}
     second:
     - {fileID: -8460273326965738312}
+  - first: {fileID: 7719695695681810554}
+    second:
+    - {fileID: 4250678597414358692}
+  - first: {fileID: 8020055245862219850}
+    second:
+    - {fileID: 8289954927413749686}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 100, y: 40, z: 0}
   m_EntryPosition: {x: 100, y: 70, z: 0}

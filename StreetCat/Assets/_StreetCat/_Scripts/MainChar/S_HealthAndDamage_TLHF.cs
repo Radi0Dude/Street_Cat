@@ -32,6 +32,7 @@ public class S_HealthAndDamage_TLHF : MonoBehaviour
 		if (currentHealthAmount <= 0)
 		{
 			Destroy(gameObject);
+
 		}
     }
 	private void Update()
