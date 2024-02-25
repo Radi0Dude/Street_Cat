@@ -20,6 +20,8 @@ public class S_Movement_TF : MonoBehaviour
 	[SerializeField] Vector2 moveAmount;
 	bool collision;
 
+	float acceleration;
+
 	public float moveDir = 0;
 	float rayDir;
 	Vector3 debugRayDir;
@@ -39,6 +41,8 @@ public class S_Movement_TF : MonoBehaviour
 
 	[SerializeField]
 	string turnAnim;
+
+	Rigidbody rb;
 	
 
 	bool moveForward;
@@ -48,6 +52,7 @@ public class S_Movement_TF : MonoBehaviour
 
 	private void Start()
 	{
+		rb = GetComponent<Rigidbody>();
 		animator = GetComponent<Animator>();
 		checAmount = GameObject.Find("PlayerChecker").transform.GetComponent<S_CheckAmountOfPlayers_TLHF>();
 		
@@ -72,6 +77,7 @@ public class S_Movement_TF : MonoBehaviour
 	private void Movement()
 	{
 		horizontal = moveAmount.x;
+		 
 		if (animator)
 		{
 			animator.SetFloat(animatorMoveName, moveAmount.x);
@@ -81,7 +87,13 @@ public class S_Movement_TF : MonoBehaviour
 		if (horizontal > 0)
 		{
 			//rayDir = 0.52f;
-			
+			acceleration += Time.deltaTime;
+
+			if(acceleration > moveAmount.x)
+			{
+				acceleration = moveAmount.x;
+			}
+
 			moveDir = horizontal;
 			debugRayDir = transform.right;
 			raySomething = 1;
@@ -103,7 +115,11 @@ public class S_Movement_TF : MonoBehaviour
 		}
 		if (horizontal < 0)
 		{
-			//rayDir = 0.52f;
+			acceleration -= Time.deltaTime;
+			if (acceleration < moveAmount.x)
+			{
+				acceleration = moveAmount.x;
+			}
 
 			moveDir = horizontal;
 			debugRayDir = -transform.right;
@@ -127,6 +143,21 @@ public class S_Movement_TF : MonoBehaviour
 		}
 		else if (horizontal == 0)
 		{
+			Debug.Log(acceleration);
+			if(acceleration < -0.1)
+			{
+				acceleration += Time.deltaTime;
+
+			}
+			if(acceleration > 0.1)
+			{
+				acceleration -= Time.deltaTime;
+			}
+			if(acceleration < 0.1f ||  acceleration > -0.1f)
+			{
+				acceleration = 0;
+			}
+
 			moveDir = 0;
 			//Idle would go here!!
 			if(idle)
@@ -152,7 +183,7 @@ public class S_Movement_TF : MonoBehaviour
 
 		else
 		{
-			movement = new Vector3(0, 0, moveDir * speed) * Time.deltaTime;
+			movement = new Vector3(0, 0, acceleration * speed) * Time.deltaTime;
 		}
 
 

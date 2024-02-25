@@ -251,7 +251,19 @@ MonoBehaviour:
       m_Calls: []
   m_ControlsChangedEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
@@ -353,6 +365,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 4ce27eca-5a8d-4c20-8688-8fe5d36fa3d2
     m_ActionName: Player/Intterract[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b0f9bdc0-e3ef-4923-a972-f2752c612443
+    m_ActionName: Player/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cbdd6d24-2cda-4b32-b41c-92ebd1ba2bf9
+    m_ActionName: Player/SpawnerToggle[/Keyboard/t]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -376,6 +408,7 @@ MonoBehaviour:
   fightingSceneName: Prototyping_TF
   animatorMoveName: Move_X
   animatorFightingName: Fighting
+  animatorTurn: tr_Turn
   moveAmount: {x: 0, y: 0}
 --- !u!143 &2439394578415577809
 CharacterController:
