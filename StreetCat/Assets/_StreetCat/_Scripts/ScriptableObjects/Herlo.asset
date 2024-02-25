@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5542cb6191e64074693c3c0b0a0b3d03, type: 3}
   m_Name: Herlo
   m_EditorClassIdentifier: 
-  attackName: 
-  style: 0
-  damage: 0
-  range: 0
-  attack: 
+  attackName: Punch
+  style: 1
+  damage: 10
+  range: 0.5
+  attack: AttackAnim
   counter: []
