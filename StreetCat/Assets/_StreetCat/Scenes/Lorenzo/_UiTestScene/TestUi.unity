@@ -133,7 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 87089442}
   - component: {fileID: 87089443}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: imageAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 204539314}
   - component: {fileID: 204539315}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LeftPlayerMiddleUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,7 +689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 712452562}
   - component: {fileID: 712452563}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: imageMiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,7 +946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1147919067}
   - component: {fileID: 1147919068}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LeftPlayerAttackUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1095,7 +1095,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1358358010}
   - component: {fileID: 1358358011}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LeftPlayerDefenceUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1398,7 +1398,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1885843062}
   - component: {fileID: 1885843063}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: imageDefense
   m_TagString: Untagged
   m_Icon: {fileID: 0}
