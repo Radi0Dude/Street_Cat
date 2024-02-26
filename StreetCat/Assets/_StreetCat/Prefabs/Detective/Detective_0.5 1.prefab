@@ -182,9 +182,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 152807630756420622}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1761084827568510458}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
       insertIndex: -1
@@ -212,25 +209,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
   m_PrefabInstance: {fileID: 5763417002045375363}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &152807630756420622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4844374478254358226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a41a2ff4983e1ea49bac0bc423c12a7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackHitboxes: []
-  hurtBoxLayer: Default
-  hurtBoxTag: Default
-  mats: {fileID: 0}
-  animator: {fileID: 2202630288282762770}
-  lowAttack: Attack/LowKick
-  highAttack: Attack/M_HeavyPunch
 --- !u!114 &1761084827568510458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,7 +312,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152807630756420622}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
         m_MethodName: MidAttaclKick
         m_Mode: 1
@@ -350,7 +328,7 @@ MonoBehaviour:
     m_ActionName: Player/KickAttack[/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152807630756420622}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
         m_MethodName: LowAttackKick
         m_Mode: 1
@@ -498,6 +476,7 @@ MonoBehaviour:
   animator: {fileID: 2202630288282762770}
   lowAttack: Attack/LowKick
   highAttack: Attack/M_HeavyPunch
+  fightingState: Fighting
 --- !u!4 &5220090088656069736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}

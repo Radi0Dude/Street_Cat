@@ -39,6 +39,10 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField]
 	private string highAttack;
 
+	[AnimatorParam("animator")]
+	[SerializeField]
+	private string fightingState;
+
 	private void Start()
 	{
 		animator = GetComponent<Animator>();
@@ -47,7 +51,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		if(!cooldownMidhAttack)
 		{
-			animator.SetBool(lowAttack, true);
+			animator.Play(highAttack, 0, 0.0f);
 			kickAttack(attackHitboxes[0]);
 			StartCoroutine(CooldownHigh());
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Mid attack)");
@@ -59,7 +63,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		if (!cooldownLowAttack)
 		{
-			animator.SetBool(highAttack, true);
+			animator.Play(lowAttack, 0, 0.0f);
 			kickAttack(attackHitboxes[1]);
 			StartCoroutine(CooldownLow());		
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Low arrack)");

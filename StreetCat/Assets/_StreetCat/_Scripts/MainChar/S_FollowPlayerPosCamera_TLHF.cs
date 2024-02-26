@@ -34,16 +34,28 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	[SerializeField]
 	string nameOfScene;
 
+	[SerializeField]
+	private Animator animator;
+
+	[AnimatorParam("animator")]
+	[SerializeField]
+	private string fightingState;
+
+	[AnimatorParam("animator")]
+	[SerializeField]
+	private string styleDefensive;
+
+	[AnimatorParam("animator")]
+	[SerializeField]
+	private string styleMiddle;
+
+	[AnimatorParam("animator")]
+	[SerializeField]
+	private string styleAggresive;
+
 	private void Start()
 	{
-		
-		//playerOnePos = null;
-
-	
-		
-			PlayerNotJoinedEvent();
-		
-
+		PlayerNotJoinedEvent();
 	}
 
 	public void PlayerNotJoinedEvent()
@@ -149,7 +161,12 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	}
 	private void CalculateDistancePlayerIfTwo()
 	{
-		transform.position = (playerOnePos.position + playerTwoPos.position) / 2;
+		
+		if(hasMultiplePlayers)
+		{
+			transform.position = (playerOnePos.position + playerTwoPos.position) / 2;
+		}
+
 
 	}
 }
