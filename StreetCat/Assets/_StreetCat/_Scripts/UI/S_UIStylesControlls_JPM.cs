@@ -13,18 +13,7 @@ public class S_UIStylesControlls_JPM : MonoBehaviour
 
     private void Update()
     {
-        if (attack.transform.rotation != attack.transform.rotation)
-        {
-            attack.transform.rotation = attack.transform.rotation;
-        }
-        if (middle.transform.rotation != middle.transform.rotation)
-        {
-            middle.transform.rotation = middle.transform.rotation;
-        }
-        if (defence.transform.rotation != defence.transform.rotation)
-        {
-            defence.transform.rotation = defence.transform.rotation;
-        }
+       
         if (Input.GetKeyDown("1"))
         {
             attack.SetActive(true);
