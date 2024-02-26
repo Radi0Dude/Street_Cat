@@ -228,6 +228,9 @@ MonoBehaviour:
   hurtBoxLayer: Default
   hurtBoxTag: Default
   mats: {fileID: 0}
+  animator: {fileID: 2202630288282762770}
+  lowAttack: Attack/LowKick
+  highAttack: Attack/M_HeavyPunch
 --- !u!114 &1761084827568510458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,9 +334,9 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 152807630756420622}
         m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
-        m_MethodName: OnButtonClick
+        m_MethodName: MidAttaclKick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -346,7 +349,19 @@ MonoBehaviour:
     m_ActionId: 54b8d90b-51e4-44f6-bf8f-ac1e48236484
     m_ActionName: Player/KickAttack[/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 152807630756420622}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: LowAttackKick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: afa9928a-af61-409d-8f0b-b690ae72f0e9
     m_ActionName: Player/KickAttackLow[/Keyboard/k]
   - m_PersistentCalls:
@@ -480,6 +495,9 @@ MonoBehaviour:
   hurtBoxLayer: Default
   hurtBoxTag: Default
   mats: {fileID: 0}
+  animator: {fileID: 2202630288282762770}
+  lowAttack: Attack/LowKick
+  highAttack: Attack/M_HeavyPunch
 --- !u!4 &5220090088656069736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}

@@ -1268,6 +1268,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: b0f9bdc0-e3ef-4923-a972-f2752c612443
     m_ActionName: Player/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cbdd6d24-2cda-4b32-b41c-92ebd1ba2bf9
+    m_ActionName: Player/SpawnerToggle[/Keyboard/t]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -1346,9 +1350,10 @@ MonoBehaviour:
   moveAxis: Horizontal
   speed: 5
   animator: {fileID: 0}
-  fightingSceneName: Menu 1
+  fightingSceneName: Street
   animatorMoveName: 
   animatorFightingName: 
+  animatorTurn: 
   moveAmount: {x: 0, y: 0}
 --- !u!1 &8640882561948836774
 GameObject:
