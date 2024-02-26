@@ -53,6 +53,13 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	[SerializeField]
 	private string styleAggresive;
 
+	[SerializeField]
+	private GameObject trainingDummy;
+
+	private bool playerOneSpawned;
+	private bool playerTwoSpawned;
+	private bool trainingDummySpawned;
+
 	private void Start()
 	{
 		PlayerNotJoinedEvent();
@@ -166,7 +173,16 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 		{
 			transform.position = (playerOnePos.position + playerTwoPos.position) / 2;
 		}
-
+		if (!hasMultiplePlayers)
+		{
+			if(!trainingDummySpawned)
+			{
+				GameObject dummy = Instantiate(trainingDummy, new Vector3(playerOnePos.position.x, transform.position.y, transform.position.z + 6), Quaternion.identity);
+				playerTwoPos = dummy.transform;
+				trainingDummySpawned = true;
+			}
+			transform.position = (playerOnePos.position + playerTwoPos.position) / 2;
+		}
 
 	}
 }

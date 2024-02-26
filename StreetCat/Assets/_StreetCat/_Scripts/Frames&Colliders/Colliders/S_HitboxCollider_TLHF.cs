@@ -39,9 +39,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField]
 	private string highAttack;
 
-	[AnimatorParam("animator")]
-	[SerializeField]
-	private string fightingState;
+	
 
 	private void Start()
 	{

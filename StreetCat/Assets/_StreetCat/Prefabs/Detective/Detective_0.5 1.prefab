@@ -197,6 +197,9 @@ PrefabInstance:
       addedObject: {fileID: 4730381361612414991}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5407068654109427735}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4835511344251089500}
   m_SourcePrefab: {fileID: 100100000, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
 --- !u!95 &2202630288282762770 stripped
@@ -312,7 +315,7 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4835511344251089500}
         m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
         m_MethodName: MidAttaclKick
         m_Mode: 1
@@ -328,7 +331,7 @@ MonoBehaviour:
     m_ActionName: Player/KickAttack[/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4835511344251089500}
         m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
         m_MethodName: LowAttackKick
         m_Mode: 1
@@ -343,15 +346,87 @@ MonoBehaviour:
     m_ActionId: afa9928a-af61-409d-8f0b-b690ae72f0e9
     m_ActionName: Player/KickAttackLow[/Keyboard/k]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4835511344251089500}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: StyleDef
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5407068654109427735}
+        m_TargetAssemblyTypeName: S_CheckStates_TLHF, Assembly-CSharp
+        m_MethodName: DefStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: bd57d0a1-d982-4d7f-89d0-c7c7c105d73e
     m_ActionName: Player/StyleDef[/Keyboard/1]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4835511344251089500}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: StyleMid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5407068654109427735}
+        m_TargetAssemblyTypeName: S_CheckStates_TLHF, Assembly-CSharp
+        m_MethodName: MidStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e8983023-2f04-4519-87d8-b720b961df45
     m_ActionName: Player/StyleMid[/Keyboard/2]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4835511344251089500}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: StyleAtck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5407068654109427735}
+        m_TargetAssemblyTypeName: S_CheckStates_TLHF, Assembly-CSharp
+        m_MethodName: AggStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fb12125a-5257-4bc4-8e67-657fb2c2db14
     m_ActionName: Player/StyleAtck[/Keyboard/3]
   - m_PersistentCalls:
@@ -457,6 +532,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthAmount: 0
   healthslider: {fileID: 0}
+--- !u!114 &5407068654109427735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844374478254358226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499cd973599beb946b8afefc32b600bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2202630288282762770}
+  fightingStateAnim: Fighting
+  fightingStyleAnimList:
+  - Defensive
+  - Mid
+  - Attack
+  oneVOneScene: Prototyping_TF
 --- !u!114 &4835511344251089500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,9 +568,8 @@ MonoBehaviour:
   hurtBoxTag: Default
   mats: {fileID: 0}
   animator: {fileID: 2202630288282762770}
-  lowAttack: Attack/LowKick
-  highAttack: Attack/M_HeavyPunch
-  fightingState: Fighting
+  lowAttack: Attack/M_HeavyPunch
+  highAttack: Att/Kick
 --- !u!4 &5220090088656069736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
