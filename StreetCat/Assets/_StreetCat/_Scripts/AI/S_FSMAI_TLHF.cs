@@ -1,18 +1,19 @@
 using NaughtyAttributes;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 {    
     
     private State state;
     private StorPaellaPanna attackingState;
-    private PaellaPanne HealthState;
-
+  
     [SerializeField]
     private float speed;
+    [SerializeField] 
+    private float attackStateSpeed;
     [SerializeField]
     private float health;
     [SerializeField]
@@ -22,34 +23,49 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     [SerializeField]
     private string playerTag;
 
+    //universal bools
     private bool isDead;
+    private bool isAttacking;
+    private bool isBlocking;
+
+    //idle state spesifics
+    private bool idleTime;
+    private float timeUnitlAnimChange;
 
     private GameObject player;
 
+    
 	//Animations
+	#region
 	private Animator animator;
 
+	[Foldout("AnimationNames")]
 	[AnimatorParam("animator")]
     [SerializeField]
     private string IdleAnim;
 
-    [AnimatorParam("animator")]
+	[Foldout("AnimationNames")]
+	[AnimatorParam("animator")]
     [SerializeField]
     private string deathAnim;
 
-    [AnimatorParam("animator")]
+	[Foldout("AnimationNames")]
+	[AnimatorParam("animator")]
     [SerializeField]
     private string defAnim;
 
-    [AnimatorParam("animator")]
+	[Foldout("AnimationNames")]
+	[AnimatorParam("animator")]
     [SerializeField]
     private string midAnim;
 
-    [AnimatorParam("animator")]
+	[Foldout("AnimationNames")]
+	[AnimatorParam("animator")]
     [SerializeField]
     private string aggAnim;
+	#endregion
 
-    [SerializeField]
+	[SerializeField]
     private List<S_AttackList_TLHF> attacks = new List<S_AttackList_TLHF>();
 
 
@@ -82,21 +98,49 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             case State.Attack: 
                 AttackState(); 
                 break;
+            case State.Patrol:
+                PatrolState();
+                break;
+
 
         }
 
         timeSinceStart = Time.deltaTime;
         if(health <= 0)
         {
-            state = State.Dead;
+            state = State.Attack;
         }
     }
-
-    private void IdleState()
+    //Idle state;
+	#region 
+	private void IdleState()
     {
-        
+        //play idle animation
+        if(idleTime == true)
+        {
+            timeUnitlAnimChange = timeSinceStart + Random.Range(5f, 15f);
+            //choose random anim, and change it to that, also has a chance to change to patrol, and if there is multiple enemies whitin range they will patrol togheter
+            idleTime = false;
+        }      
+        if(timeUnitlAnimChange <= timeSinceStart && idleTime == false)
+        {
+
+        }
+        //check its look dir, if player is in the direction it is looking and if player is whitin looking range and the looking dir is towards player change to chase
     }
-    private void CHaseState()
+	#endregion
+	//Patrol State
+	#region
+	private void PatrolState()
+    {
+		//at start create two wanderpoints and walk between them, also find refrence to other players and have them walk with 
+		//check its look dir, if player is in the direction it is looking and if player is whitin looking range and the looking dir is towards player change to chase
+	}
+
+	#endregion
+	//Chase state
+	#region
+	private void CHaseState()
     {
         destination = playerPos.position;
 
@@ -109,14 +153,14 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         else if (dist >= 50)
         {
             state = State.Idle;
-
         }
 
         transform.Translate(playerPos.position * Time.deltaTime * speed);
     }
-
-
-    private void DeadState()
+	#endregion
+	//Dead State
+	#region
+	private void DeadState()
     {
         if (!isDead)
         {
@@ -126,13 +170,16 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             Destroy(gameObject, 10f);
         }
     }
-    private void AttackState()
+	#endregion
+	//Attacking state
+	#region
+	private void AttackState()
     {
         destination = playerPos.position;
 
-        float distamce = Vector3.Distance(transform.position, playerPos.position);
+        float distance = Vector3.Distance(transform.position, playerPos.position);
 
-        if(distamce >= 10)
+        if(distance >= 10)
         {
             state = State.Chase;
         }
@@ -140,56 +187,92 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         switch (attackingState) 
         { 
             case StorPaellaPanna.DefState:
-                DefensiveState(destination, distamce);
+                DefensiveState(destination, distance);
                 break;
             case StorPaellaPanna.MidState:
-                MiddleState(destination, distamce);
+                MiddleState(destination, distance);
                 break;
             case StorPaellaPanna.AggState:
-                AggresiveState(destination, distamce);
+                AggresiveState(destination, distance);
                 break;
         }
     }
-
-	
+	#endregion
+	//defensive state
+	#region
 	private void DefensiveState(Vector3 dest, float dist)
 	{
-        
+        //play Defensive state animation
+        List<ScriptableObject> usableAttacks = new List<ScriptableObject>();
+        for (int i = 0; i < attacks.Count; i++)
+        {
+            if (attacks[i].style == 1)
+            {
+                usableAttacks.Add(attacks[i]);
+            }
+
+            
+        }
+
 	}
+	#endregion
+
+    //Middle state;
+	#region
 	private void MiddleState(Vector3 dest, float dist)
 	{
+        List<ScriptableObject> usableAttacks = new List<ScriptableObject>();
+        for(int i = 0; i < attacks.Count; i++)
+        {
+            if (attacks[i].style == 2)
+            {
+                usableAttacks.Add(attacks[i]);
+            }
+        }
 
 	}
+	#endregion
+
+	//Aggresive State
+	#region 
 	private void AggresiveState(Vector3 dest, float dist)
 	{
+        //play aggresive state animation
+        List<ScriptableObject> usableAttacks = new List<ScriptableObject>();
+        for(int i = 0; i < attacks.Count; i++)
+        {
+            if (attacks[i].style == 3)
+            {
+                usableAttacks.Add(attacks[i]);
+            }
+        }
 
 	}
+	#endregion
 
 
-	
-
-    public enum State
+    //All the different states
+	#region
+	public enum State
     {
-        None,
         Idle,
         Chase,
+        Patrol,
         Attack,
-    
         Dead,
     }
-    public enum StorPaellaPanna // Attacking state
+	#endregion
+
+    //Here are the different attacking states
+	#region
+	public enum StorPaellaPanna // Attacking state
     {
-        None,
         DefState,
         MidState,
         AggState,
     }
-    public enum PaellaPanne // Health state
-    {
-        None,
-        HighHealt,
-        LowHealth
-    }
+	#endregion
+
 
 
 
