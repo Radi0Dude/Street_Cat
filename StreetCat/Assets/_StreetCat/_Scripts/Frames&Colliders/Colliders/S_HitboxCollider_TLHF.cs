@@ -28,25 +28,42 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField]
 	Material mats;
 
+	[SerializeField]
+	private Animator animator;
 
+	[AnimatorParam("animator")]
+	[SerializeField]
+	private string lowAttack;
 
-    public void MidAttaclKick()
+	[AnimatorParam("animator")]
+	[SerializeField]
+	private string highAttack;
+
+	[AnimatorParam("animator")]
+	[SerializeField]
+	private string fightingState;
+
+	private void Start()
+	{
+		animator = GetComponent<Animator>();
+	}
+	public void MidAttaclKick()
 	{
 		if(!cooldownMidhAttack)
 		{
-
+			animator.Play(highAttack, 0, 0.0f);
 			kickAttack(attackHitboxes[0]);
 			StartCoroutine(CooldownHigh());
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Mid attack)");
 		}
-
+		
 
 	}
 	public void LowAttackKick()
 	{
 		if (!cooldownLowAttack)
 		{
-
+			animator.Play(lowAttack, 0, 0.0f);
 			kickAttack(attackHitboxes[1]);
 			StartCoroutine(CooldownLow());		
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Low arrack)");
@@ -114,6 +131,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 
 	private void kickAttack(Collider collider)
 	{
+
 		Collider[] cols = Physics.OverlapBox(collider.bounds.center, collider.bounds.extents, Quaternion.identity, LayerMask.GetMask(hurtBoxLayer));
 		foreach (Collider col in cols)
 		{
@@ -140,12 +158,14 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		cooldownMidhAttack = true;
 		yield return new WaitForSeconds(0.5f);
+		animator.SetBool(highAttack, false);
 		cooldownMidhAttack = false;
 	}
 	IEnumerator CooldownLow()
 	{
 		cooldownLowAttack = true;
 		yield return new WaitForSeconds(0.5f);
+		animator.SetBool(lowAttack, false);
 		cooldownLowAttack = false;
 	}
 }
