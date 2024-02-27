@@ -1,3 +1,4 @@
+using Cinemachine;
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
@@ -34,6 +35,8 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	[SerializeField]
 	string nameOfScene;
 
+	[SerializeField]
+	CinemachineVirtualCamera virtualCamera;
 	
 
 	[SerializeField]
@@ -44,6 +47,9 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	private bool trainingDummySpawned;
 
 	private GameObject dummy;
+
+	private float followOfset;
+	private float amountMoreThanNine;
 	
 	public void PlayerJoinedEvent()
 	{		
@@ -177,6 +183,15 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 				trainingDummySpawned = true;
 			}
 			transform.position = (playerOnePos.position + playerTwoPos.position) / 2;
+			Debug.Log(Vector3.Distance(playerOnePos.position, playerTwoPos.position));
+			if(Vector3.Distance(playerOnePos.position, playerTwoPos.position) > 9)
+			{
+				virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.x = 5 + Vector3.Distance(playerOnePos.position, playerTwoPos.position) - 9;
+			}
+			else
+			{
+				virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.x = 5;
+			}
 		}
 
 	}
