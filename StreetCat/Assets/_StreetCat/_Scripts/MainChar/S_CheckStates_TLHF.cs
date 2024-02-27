@@ -19,14 +19,29 @@ public class S_CheckStates_TLHF : MonoBehaviour
     private string fightingStateAnim;
 
     
-	[SerializeField]
-	private List<string> fightingStyleAnimList = new List<string>();
+	
 
-    
+    [AnimatorParam("animator")]
+    [SerializeField]
+    private string defStyle;
 
-    [Scene]
+    [AnimatorParam("animator")]
+    [SerializeField]
+    private string midStyle;
+
+    [AnimatorParam("animator")]
+    [SerializeField]
+    private string aggStyle;
+
+
+	[Scene]
     [SerializeField]
     private string oneVOneScene;
+
+	private void Start()
+	{
+        style = 0;
+	}
 	public void DefStyle()
     {
         style = 0;
@@ -81,9 +96,9 @@ public class S_CheckStates_TLHF : MonoBehaviour
         
 
         //Fighting styles
-		animator.SetBool(fightingStyleAnimList[0], false);
-		animator.SetBool(fightingStyleAnimList[1], false);
-		animator.SetBool(fightingStyleAnimList[2], false);
+		animator.SetBool(defStyle, false);
+		animator.SetBool(midStyle, false);
+		animator.SetBool(aggStyle, false);
 
         //Fighting State
 		animator.SetBool(fightingStateAnim, true);
@@ -112,20 +127,20 @@ public class S_CheckStates_TLHF : MonoBehaviour
 
 	private void DefStyleAnim()
 	{
-        animator.SetBool(fightingStyleAnimList[0], true);
-        animator.SetBool(fightingStyleAnimList[1], false);
-        animator.SetBool(fightingStyleAnimList[2], false);
+        animator.SetBool(defStyle, true);
+        animator.SetBool(midStyle, false);
+        animator.SetBool(aggStyle, false);
 	}
 	private void MidStyleAnim()
 	{
-		animator.SetBool(fightingStyleAnimList[0], false);
-		animator.SetBool(fightingStyleAnimList[1], true);
-		animator.SetBool(fightingStyleAnimList[2], false);
+		animator.SetBool(defStyle, false);
+		animator.SetBool(midStyle, true);
+		animator.SetBool(aggStyle, false);
 	}
     private void AggStyleAnim()
 	{
-		animator.SetBool(fightingStyleAnimList[0], false);
-		animator.SetBool(fightingStyleAnimList[1], false);
-		animator.SetBool(fightingStyleAnimList[2], true);
+		animator.SetBool(defStyle, false);
+		animator.SetBool(midStyle, false);
+		animator.SetBool(aggStyle, true);
 	}
 }

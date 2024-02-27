@@ -49,7 +49,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		if(!cooldownMidhAttack)
 		{
-			animator.Play(highAttack, 0, 0.0f);
+			animator.SetTrigger(highAttack);
 			kickAttack(attackHitboxes[0]);
 			StartCoroutine(CooldownHigh());
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Mid attack)");
@@ -61,7 +61,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		if (!cooldownLowAttack)
 		{
-			animator.Play(lowAttack, 0, 0.0f);
+			animator.SetTrigger(lowAttack);
 			kickAttack(attackHitboxes[1]);
 			StartCoroutine(CooldownLow());		
 			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Low arrack)");
