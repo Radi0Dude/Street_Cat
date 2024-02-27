@@ -34,24 +34,7 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	[SerializeField]
 	string nameOfScene;
 
-	[SerializeField]
-	private Animator animator;
-
-	[AnimatorParam("animator")]
-	[SerializeField]
-	private string fightingState;
-
-	[AnimatorParam("animator")]
-	[SerializeField]
-	private string styleDefensive;
-
-	[AnimatorParam("animator")]
-	[SerializeField]
-	private string styleMiddle;
-
-	[AnimatorParam("animator")]
-	[SerializeField]
-	private string styleAggresive;
+	
 
 	[SerializeField]
 	private GameObject trainingDummy;
@@ -60,23 +43,31 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	private bool playerTwoSpawned;
 	private bool trainingDummySpawned;
 
-	private void Start()
-	{
-		PlayerNotJoinedEvent();
-	}
-
-	public void PlayerNotJoinedEvent()
-	{
-		this.transform.position = playerOnePos.position;
-		playerTwoPos = null;		
-		hasMultiplePlayers = false;	
-		hasMoved = playerOnePos.position;
-		OnSpawnPositionOnePlayer();
-
-
-	}
+	private GameObject dummy;
+	
 	public void PlayerJoinedEvent()
-	{
+	{		
+		if(playerOneSpawned)
+		{
+			if(!playerTwoSpawned)
+			{
+				playerTwoSpawned = true;
+				Debug.Log("Herlo");
+			}
+		}
+		if(!playerOneSpawned)
+		{
+			playerOnePos = GameObject.FindGameObjectWithTag(playertag).transform;	
+			this.transform.position = playerOnePos.position;		
+			OnSpawnPositionOnePlayer();		
+	
+			hasMultiplePlayers = false;			
+			playerTwoPos = null;
+		
+			playerOneSpawned = true;				
+			hasMoved = playerOnePos.position;	
+		}
+
 		if(SceneManager.GetActiveScene().name == nameOfScene)
 		{
 			hasMultiplePlayers = true;
@@ -96,12 +87,7 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 				hasMoved = playerOnePos.position;
 
 			}
-			else if (GameObject.FindGameObjectsWithTag(playertag).Length < 1)
-			{
-				playerOnePos = null;
-				playerTwoPos = null;
-
-			}
+			
 		}
 		else
 		{
@@ -134,13 +120,16 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	}
 	private void Update()
 	{
-		if(!hasMultiplePlayers)
+		if(playerOneSpawned)
 		{
-			CalculateDistancePlayerOne();
-		}
-		else
-		{
-			CalculateDistancePlayerIfTwo();
+			if(!hasMultiplePlayers)
+			{
+				CalculateDistancePlayerOne();
+			}
+			else
+			{
+				CalculateDistancePlayerIfTwo();
+			}
 		}
 
 		
@@ -168,16 +157,22 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	}
 	private void CalculateDistancePlayerIfTwo()
 	{
-		
-		if(hasMultiplePlayers)
+		if(playerTwoSpawned)
 		{
+			if(dummy != null) 
+			{
+				Destroy(dummy);
+				playerTwoPos = GameObject.FindGameObjectsWithTag(playertag)[1].transform;
+			}
 			transform.position = (playerOnePos.position + playerTwoPos.position) / 2;
+			
 		}
-		if (!hasMultiplePlayers)
+		
+		if (playerOneSpawned)
 		{
 			if(!trainingDummySpawned)
 			{
-				GameObject dummy = Instantiate(trainingDummy, new Vector3(playerOnePos.position.x, transform.position.y, transform.position.z + 6), Quaternion.identity);
+				dummy = Instantiate(trainingDummy, new Vector3(playerOnePos.position.x, transform.position.y, transform.position.z + 6), Quaternion.identity);
 				playerTwoPos = dummy.transform;
 				trainingDummySpawned = true;
 			}
