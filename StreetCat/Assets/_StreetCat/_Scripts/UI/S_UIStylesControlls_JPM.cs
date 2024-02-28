@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,27 +12,35 @@ public class S_UIStylesControlls_JPM : MonoBehaviour
     [SerializeField]
     private GameObject defence;
 
-    private void Update()
-    {
-       
-        if (Input.GetKeyDown("1"))
-        {
-            attack.SetActive(true);
-            middle.SetActive(false);
-            defence.SetActive(false);
-        }
-        if (Input.GetKeyDown("2"))
-        {
-            attack.SetActive(false);
-            middle.SetActive(true);
-            defence.SetActive(false);
-        }
-        if (Input.GetKeyDown("3"))
-        {
-            attack.SetActive(false);
-            middle.SetActive(false);
-            defence.SetActive(true);
-        }
-    }
+	[Tag]
+	[SerializeField] private string UITag;
 
+	private void Start()
+	{
+		attack = GameObject.FindGameObjectsWithTag(UITag)[2];
+		middle = GameObject.FindGameObjectsWithTag(UITag)[0];
+		defence = GameObject.FindGameObjectsWithTag(UITag)[1];
+		
+	}
+
+	public void DefensiveStyle()
+    {
+		attack.SetActive(true);
+		middle.SetActive(false);
+		defence.SetActive(false);
+	}
+
+    public void MiddleStyle()
+    {
+		attack.SetActive(false);
+		middle.SetActive(true);
+		defence.SetActive(false);
+	}
+
+    public void AggresiveStyle()
+    {
+		attack.SetActive(false);
+		middle.SetActive(false);
+		defence.SetActive(true);
+	}
 }

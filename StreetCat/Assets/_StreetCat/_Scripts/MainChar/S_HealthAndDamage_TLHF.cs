@@ -18,6 +18,7 @@ public class S_HealthAndDamage_TLHF : MonoBehaviour
 
 	private void Start()
 	{
+		healthslider = GameObject.FindAnyObjectByType<Slider>();
 		currentHealthAmount = maxHealthAmount;
 		healthslider.maxValue = maxHealthAmount;
 	}

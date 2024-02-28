@@ -433,6 +433,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4835511344251089500}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5430042878845534160}
   m_SourcePrefab: {fileID: 100100000, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
 --- !u!95 &2202630288282762770 stripped
 Animator:
@@ -603,6 +606,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5430042878845534160}
+        m_TargetAssemblyTypeName: S_UIStylesControlls_JPM, Assembly-CSharp
+        m_MethodName: DefensiveStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: bd57d0a1-d982-4d7f-89d0-c7c7c105d73e
     m_ActionName: Player/StyleDef[/Keyboard/1]
   - m_PersistentCalls:
@@ -631,6 +646,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5430042878845534160}
+        m_TargetAssemblyTypeName: S_UIStylesControlls_JPM, Assembly-CSharp
+        m_MethodName: MiddleStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e8983023-2f04-4519-87d8-b720b961df45
     m_ActionName: Player/StyleMid[/Keyboard/2]
   - m_PersistentCalls:
@@ -650,6 +677,18 @@ MonoBehaviour:
       - m_Target: {fileID: 5407068654109427735}
         m_TargetAssemblyTypeName: S_CheckStates_TLHF, Assembly-CSharp
         m_MethodName: AggStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5430042878845534160}
+        m_TargetAssemblyTypeName: S_UIStylesControlls_JPM, Assembly-CSharp
+        m_MethodName: AggresiveStyle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -798,11 +837,27 @@ MonoBehaviour:
   - {fileID: 6129629055860303937}
   - {fileID: 8273995801936041823}
   hurtBoxLayer: HurtBox
-  hurtBoxTag: HitBox
+  hurtBoxTag: HurtBox
   mats: {fileID: 0}
   animator: {fileID: 2202630288282762770}
   lowAttack: Att/Punch
   highAttack: Att/Kick
+--- !u!114 &5430042878845534160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844374478254358226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd4f0021b72d864b8a9763e3efc964c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 0}
+  middle: {fileID: 0}
+  defence: {fileID: 0}
+  UITag: UI
 --- !u!4 &5220090088656069736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}

@@ -170,8 +170,8 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 				Destroy(dummy);
 				playerTwoPos = GameObject.FindGameObjectsWithTag(playertag)[1].transform;
 			}
-			transform.position = (playerOnePos.position + playerTwoPos.position) / 2;
-			
+			transform.position = new Vector3((playerOnePos.position.x + playerTwoPos.position.x) / 2, (playerOnePos.position.y + playerTwoPos.position.y) + 1, (playerOnePos.position.z + playerTwoPos.position.z) / 2);
+
 		}
 		
 		if (playerOneSpawned)
@@ -182,15 +182,15 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 				playerTwoPos = dummy.transform;
 				trainingDummySpawned = true;
 			}
-			transform.position = (playerOnePos.position + playerTwoPos.position) / 2;
+			transform.position = new Vector3((playerOnePos.position.x + playerTwoPos.position.x) / 2, (playerOnePos.position.y + playerTwoPos.position.y) + 1, (playerOnePos.position.z + playerTwoPos.position.z) / 2);
 			Debug.Log(Vector3.Distance(playerOnePos.position, playerTwoPos.position));
 			if(Vector3.Distance(playerOnePos.position, playerTwoPos.position) > 9)
 			{
-				virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.x = 5 + Vector3.Distance(playerOnePos.position, playerTwoPos.position) - 9;
+				virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.x = 2.5f + Vector3.Distance(playerOnePos.position, playerTwoPos.position) - 9;
 			}
 			else
 			{
-				virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.x = 5;
+				virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.x = 2.5f;
 			}
 		}
 

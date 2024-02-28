@@ -133,6 +133,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		Collider[] cols = Physics.OverlapBox(collider.bounds.center, collider.bounds.extents, Quaternion.identity, LayerMask.GetMask(hurtBoxLayer));
 		foreach (Collider col in cols)
 		{
+			Debug.Log(col.transform.root.name);
 			if(col.transform.root == transform) 
 				continue;
 			float attackDamage = 0f;
