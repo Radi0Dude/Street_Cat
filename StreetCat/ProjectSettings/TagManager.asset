@@ -9,6 +9,7 @@ TagManager:
   - HurtBox
   - Interract
   - InputManager
+  - UI
   layers:
   - Default
   - TransparentFX

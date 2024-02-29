@@ -183,7 +183,7 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 				trainingDummySpawned = true;
 			}
 			transform.position = new Vector3((playerOnePos.position.x + playerTwoPos.position.x) / 2, (playerOnePos.position.y + playerTwoPos.position.y) + 1, (playerOnePos.position.z + playerTwoPos.position.z) / 2);
-			Debug.Log(Vector3.Distance(playerOnePos.position, playerTwoPos.position));
+
 			if(Vector3.Distance(playerOnePos.position, playerTwoPos.position) > 9)
 			{
 				virtualCamera.GetCinemachineComponent<CinemachineTransposer>().m_FollowOffset.x = 2.5f + Vector3.Distance(playerOnePos.position, playerTwoPos.position) - 9;
