@@ -105,6 +105,232 @@ PositionConstraint:
   m_Sources:
   - sourceTransform: {fileID: 6363743359940334552}
     weight: 1
+--- !u!1 &4455840066470286156
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3132526988901111376}
+  - component: {fileID: 1644215698992534343}
+  m_Layer: 9
+  m_Name: Hurtbox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3132526988901111376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455840066470286156}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3349990362960825560}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &1644215698992534343
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4455840066470286156}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &4475830137505536273
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3349990362960825560}
+  m_Layer: 0
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3349990362960825560
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4475830137505536273}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00000011920929, y: 1.1535059, z: 0.017772973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3132526988901111376}
+  m_Father: {fileID: 5220090088656069736}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6732453744262317838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2834635706780966818}
+  - component: {fileID: 8273995801936041823}
+  m_Layer: 8
+  m_Name: HitBoxesH
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2834635706780966818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6732453744262317838}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.13349402, z: -0.017772973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1163686611016184654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &8273995801936041823
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6732453744262317838}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.699291, z: 0.98319906}
+  m_Center: {x: 0, y: 0.1503545, z: 0.46334317}
+--- !u!1 &7693037372021284703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1163686611016184654}
+  m_Layer: 8
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1163686611016184654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7693037372021284703}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.00000011920929, y: 1.1535059, z: 0.017772973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2834635706780966818}
+  - {fileID: 2862171809803102412}
+  m_Father: {fileID: 5220090088656069736}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8213484236074481331
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2862171809803102412}
+  - component: {fileID: 6129629055860303937}
+  m_Layer: 8
+  m_Name: HitBoxesL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2862171809803102412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213484236074481331}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.1535059, z: -0.017772973}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1163686611016184654}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6129629055860303937
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8213484236074481331}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.4337004, z: 1.1319381}
+  m_Center: {x: 0, y: 0.2831498, z: 0.6156334}
 --- !u!1001 &5763417002045375363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -179,10 +405,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
       insertIndex: -1
       addedObject: {fileID: 9125439966475648521}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 152807630756420622}
+      addedObject: {fileID: 1163686611016184654}
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3349990362960825560}
+    m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1761084827568510458}
@@ -200,7 +429,13 @@ PrefabInstance:
       addedObject: {fileID: 4730381361612414991}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 5407068654109427735}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 4835511344251089500}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5430042878845534160}
   m_SourcePrefab: {fileID: 100100000, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
 --- !u!95 &2202630288282762770 stripped
 Animator:
@@ -212,22 +447,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
   m_PrefabInstance: {fileID: 5763417002045375363}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &152807630756420622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4844374478254358226}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a41a2ff4983e1ea49bac0bc423c12a7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackHitboxes: []
-  hurtBoxLayer: Default
-  hurtBoxTag: Default
-  mats: {fileID: 0}
 --- !u!114 &1761084827568510458
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,9 +550,9 @@ MonoBehaviour:
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 4835511344251089500}
         m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
-        m_MethodName: OnButtonClick
+        m_MethodName: MidAttaclKick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -346,19 +565,139 @@ MonoBehaviour:
     m_ActionId: 54b8d90b-51e4-44f6-bf8f-ac1e48236484
     m_ActionName: Player/KickAttack[/XInputControllerWindows/buttonWest]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4835511344251089500}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: LowAttackKick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: afa9928a-af61-409d-8f0b-b690ae72f0e9
     m_ActionName: Player/KickAttackLow[/Keyboard/k]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4835511344251089500}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: StyleDef
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5407068654109427735}
+        m_TargetAssemblyTypeName: S_CheckStates_TLHF, Assembly-CSharp
+        m_MethodName: DefStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5430042878845534160}
+        m_TargetAssemblyTypeName: S_UIStylesControlls_JPM, Assembly-CSharp
+        m_MethodName: DefensiveStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: bd57d0a1-d982-4d7f-89d0-c7c7c105d73e
     m_ActionName: Player/StyleDef[/Keyboard/1]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4835511344251089500}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: StyleMid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5407068654109427735}
+        m_TargetAssemblyTypeName: S_CheckStates_TLHF, Assembly-CSharp
+        m_MethodName: MidStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5430042878845534160}
+        m_TargetAssemblyTypeName: S_UIStylesControlls_JPM, Assembly-CSharp
+        m_MethodName: MiddleStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: e8983023-2f04-4519-87d8-b720b961df45
     m_ActionName: Player/StyleMid[/Keyboard/2]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4835511344251089500}
+        m_TargetAssemblyTypeName: S_HitboxCollider_TLHF, Assembly-CSharp
+        m_MethodName: StyleAtck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5407068654109427735}
+        m_TargetAssemblyTypeName: S_CheckStates_TLHF, Assembly-CSharp
+        m_MethodName: AggStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5430042878845534160}
+        m_TargetAssemblyTypeName: S_UIStylesControlls_JPM, Assembly-CSharp
+        m_MethodName: AggresiveStyle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fb12125a-5257-4bc4-8e67-657fb2c2db14
     m_ActionName: Player/StyleAtck[/Keyboard/3]
   - m_PersistentCalls:
@@ -464,6 +803,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealthAmount: 0
   healthslider: {fileID: 0}
+--- !u!114 &5407068654109427735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844374478254358226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499cd973599beb946b8afefc32b600bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2202630288282762770}
+  fightingStateAnim: Fighting
+  defStyle: Style/Defensive
+  midStyle: Style/Mid
+  aggStyle: Style/Attack
+  oneVOneScene: Prototyping_TF
 --- !u!114 &4835511344251089500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,10 +833,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a41a2ff4983e1ea49bac0bc423c12a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackHitboxes: []
-  hurtBoxLayer: Default
-  hurtBoxTag: Default
+  attackHitboxes:
+  - {fileID: 6129629055860303937}
+  - {fileID: 8273995801936041823}
+  hurtBoxLayer: HurtBox
+  hurtBoxTag: HurtBox
   mats: {fileID: 0}
+  animator: {fileID: 2202630288282762770}
+  lowAttack: Att/Punch
+  highAttack: Att/Kick
+--- !u!114 &5430042878845534160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4844374478254358226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd4f0021b72d864b8a9763e3efc964c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: {fileID: 0}
+  middle: {fileID: 0}
+  defence: {fileID: 0}
+  UITag: UI
 --- !u!4 &5220090088656069736 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 42690267c4eaef6498f6141da5f9fb25, type: 3}
