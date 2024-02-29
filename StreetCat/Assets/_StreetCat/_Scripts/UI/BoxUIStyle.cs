@@ -2,15 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoxUIStyle : MonoBehaviour
 {
     [SerializeField]
-    GameObject imageMiddle;
+    private GameObject imageMiddle;
     [SerializeField]
-    GameObject imageDefense;
+    private GameObject imageDefense;
     [SerializeField]
-    GameObject imageAttack;
+    private GameObject imageAttack;
     private void UiMiddleStyle()
     {
         imageMiddle.SetActive(true);
@@ -28,6 +29,25 @@ public class BoxUIStyle : MonoBehaviour
         imageMiddle.SetActive(false);
         imageDefense.SetActive(false);
         imageAttack.SetActive(true);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("1"))
+        {
+            UiDefenseStyle();
+        }
+
+        if (Input.GetButtonDown("2"))
+        {
+            UiMiddleStyle();
+        }
+
+        if (Input.GetButtonDown("3"))
+        {
+            UiAttackStyle();
+        }
+
     }
 }
 
