@@ -4,44 +4,15 @@ using UnityEngine;
 
 public class ui : MonoBehaviour
 {
-    [SerializeField] public CanvasGroup myUIGroup;
-    [SerializeField] private bool fadeIn = false;
-    [SerializeField] private bool fadeOut = false;
-
-
-    public void ShowUI()
+    // Start is called before the first frame update
+    void Start()
     {
-        fadeIn = true;
+        
     }
 
-    public void HideUI() 
+    // Update is called once per frame
+    void Update()
     {
-        fadeOut = true;
+        
     }
-    private void Update()
-    {
-       
-        if (fadeIn)
-        {
-            if (myUIGroup.alpha < 1)
-            {
-                myUIGroup.alpha += Time.deltaTime;
-                if(myUIGroup.alpha >= 1)
-                {
-                    fadeIn = false; 
-                }
-            }
-        }
-        if (fadeOut) 
-        {
-            if(myUIGroup.alpha >= 1)
-            {
-                myUIGroup.alpha += Time.deltaTime;
-                if ( myUIGroup.alpha >= 1)
-                {
-                    fadeIn = false;
-                }
-            }
-        }
-    }  
 }

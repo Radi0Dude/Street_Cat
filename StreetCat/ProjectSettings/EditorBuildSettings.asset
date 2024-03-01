@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_StreetCat/Scenes/MainGame/Menu 1.unity
     guid: 002559a310fe6a043aa415ec008a5b4c
-  - enabled: 0
+  - enabled: 1
     path: Assets/_StreetCat/Scenes/MainGame/Street.unity
     guid: 6ce8909d941dcfd4f85cb96e6a013ff8
   - enabled: 1
@@ -20,7 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_StreetCat/Scenes/MainGame/HotelCorridor.unity
     guid: 8c8395ae749c2cb4d9456309cdec4eb3
-  - enabled: 0
+  - enabled: 1
     path: Assets/_StreetCat/Scenes/MainGame/HotelLooby.unity
     guid: a0c44114930652f439d7a68ebec6733e
   - enabled: 0

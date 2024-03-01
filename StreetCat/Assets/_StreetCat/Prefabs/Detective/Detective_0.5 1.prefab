@@ -243,8 +243,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.1974182, y: 0.699291, z: 5.3738365}
-  m_Center: {x: 0.022082806, y: 0.1503545, z: -0.50748837}
+  m_Size: {x: 1, y: 0.699291, z: 0.98319906}
+  m_Center: {x: 0, y: 0.1503545, z: 0.46334317}
 --- !u!1 &7693037372021284703
 GameObject:
   m_ObjectHideFlags: 0
@@ -329,8 +329,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.1259956, y: 0.43370038, z: 4.796316}
-  m_Center: {x: -0.30976295, y: 0.2831498, z: 0.17079592}
+  m_Size: {x: 1, y: 0.4337004, z: 1.1319381}
+  m_Center: {x: 0, y: 0.2831498, z: 0.6156334}
 --- !u!1001 &5763417002045375363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -834,8 +834,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackHitboxes:
-  - {fileID: 8273995801936041823}
   - {fileID: 6129629055860303937}
+  - {fileID: 8273995801936041823}
   hurtBoxLayer: HurtBox
   hurtBoxTag: HurtBox
   mats: {fileID: 0}
