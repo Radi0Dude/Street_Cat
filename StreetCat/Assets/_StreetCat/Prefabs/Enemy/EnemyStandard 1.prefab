@@ -237,7 +237,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 4
-  attackStateSpeed: 0
+  attackStateSpeed: 2
   health: 100
   attackTime: 0
   playerTag: Player
