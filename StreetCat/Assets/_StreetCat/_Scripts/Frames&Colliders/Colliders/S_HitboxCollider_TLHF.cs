@@ -1,7 +1,7 @@
 using NaughtyAttributes;
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
+
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,7 +15,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField] 
 	string hurtBoxLayer;
 
-	[Layer]
+	[Tag]
 	[SerializeField]
 	string hurtBoxTag;
 
@@ -50,9 +50,9 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		if(!cooldownMidhAttack)
 		{
 			animator.SetTrigger(highAttack);
-			kickAttack(attackHitboxes[0]);
+
 			StartCoroutine(CooldownHigh());
-			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Mid attack)");
+			Debug.Log("(Mid attack)");
 		}
 		
 
@@ -61,10 +61,11 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		if (!cooldownLowAttack)
 		{
-			animator.SetTrigger(lowAttack);
-			kickAttack(attackHitboxes[1]);
-			StartCoroutine(CooldownLow());		
-			Debug.Log("Ohh youre soooo good at hitting this button *Bites lip* (Low arrack)");
+			animator.SetTrigger(lowAttack);			
+
+
+			StartCoroutine(CooldownLow());	
+			Debug.Log("(Low attack)");
 		}
 		
 
@@ -109,28 +110,33 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 		StyleChanger();
 		//When frameData is done i can add the whole thing here or to a fixedUpdate
 
-		if(!cooldownLowAttack)
-		{
-			attackHitboxes[0].transform.gameObject.SetActive(false);
-		}
-		else
-		{
-			attackHitboxes[0].transform.gameObject.SetActive(true);
-		}
-		if(!cooldownMidhAttack)
-		{
-			attackHitboxes[1].transform.gameObject.SetActive(false);
-		}
-		else
-		{
-			attackHitboxes[1].transform.gameObject.SetActive(true);
-		}
+		//if(!cooldownLowAttack)
+		//{
+		//	attackHitboxes[0].transform.gameObject.SetActive(false);
+		//}
+		//else
+		//{
+		//	attackHitboxes[0].transform.gameObject.SetActive(true);
+		//}
+		//if(!cooldownMidhAttack)
+		//{
+		//	attackHitboxes[1].transform.gameObject.SetActive(false);
+		//}
+		//else
+		//{
+		//	attackHitboxes[1].transform.gameObject.SetActive(true);
+		//}
 	}
 
+	//
 	private void kickAttack(Collider collider)
 	{
-
+		Debug.Log(collider.name);
+		Debug.Log(collider.bounds + "This is bounds");
+		Debug.Log(collider.bounds.extents + "THis is extents");
+	
 		Collider[] cols = Physics.OverlapBox(collider.bounds.center, collider.bounds.extents, Quaternion.identity, LayerMask.GetMask(hurtBoxLayer));
+		Debug.Log(cols.Length);
 		foreach (Collider col in cols)
 		{
 			Debug.Log(col.transform.root.name);
@@ -139,10 +145,10 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 			float attackDamage = 0f;
 			switch(col.tag)
 			{
-
 				case "HurtBox":
 					attackDamage = 30;
 					Debug.Log("Herlo");
+
 				break;
 				default:
 					Debug.Log("Make Sure that it be a hurtBox");	
@@ -155,14 +161,18 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 
 	IEnumerator CooldownHigh()
 	{
+		
 		cooldownMidhAttack = true;
+		kickAttack(attackHitboxes[0]);
 		yield return new WaitForSeconds(0.5f);
 		animator.SetBool(highAttack, false);
 		cooldownMidhAttack = false;
 	}
 	IEnumerator CooldownLow()
 	{
+		
 		cooldownLowAttack = true;
+		kickAttack(attackHitboxes[1]);
 		yield return new WaitForSeconds(0.5f);
 		animator.SetBool(lowAttack, false);
 		cooldownLowAttack = false;
