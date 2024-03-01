@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ui : MonoBehaviour
+public class S_UiLDA : MonoBehaviour
 {
     [SerializeField] public CanvasGroup myUIGroup;
     [SerializeField] private bool fadeIn = false;
