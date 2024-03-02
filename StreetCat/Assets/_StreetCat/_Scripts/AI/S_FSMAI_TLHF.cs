@@ -34,6 +34,9 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 
     private GameObject player;
 
+    float timeToChangeStyle;
+    bool changeStyle;
+
     
 	//Animations
 	#region
@@ -71,6 +74,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 
 	protected override void Initialize()
     {
+        
         state = State.Idle;
         attackingState = StorPaellaPanna.MidState;
         
@@ -81,13 +85,14 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         player = GameObject.FindGameObjectWithTag(playerTag);
 
 		playerPos = player.transform;
-
+        Debug.Log(playerPos.position + "Hello");
 
 	}
 
     protected override void FMSUpdate()
 	{
-        switch (state)
+		Debug.Log(playerPos.position + "Hello");
+		switch (state)
         {
             case State.Idle:
                 IdleState();
@@ -105,7 +110,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 
         }
 
-        timeSinceStart = Time.deltaTime;
+        timeSinceStart = Time.realtimeSinceStartup;
         if(health <= 0)
         {
             state = State.Attack;
@@ -125,6 +130,10 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         if(timeUnitlAnimChange <= timeSinceStart && idleTime == false)
         {
 
+        }
+        if(Vector3.Distance(this.transform.position, playerPos.position) <= 30)
+        {
+            state = State.Chase;
         }
         //check its look dir, if player is in the direction it is looking and if player is whitin looking range and the looking dir is towards player change to chase
     }
@@ -146,6 +155,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 
         float dist = Vector3.Distance(transform.position, playerPos.position);
 
+        Vector3 dir = playerPos.position - transform.position;
         if (dist <= 10)
         {
             state = State.Attack;
@@ -155,7 +165,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             state = State.Idle;
         }
 
-        transform.Translate(playerPos.position * Time.deltaTime * speed);
+        transform.Translate(dir.normalized * speed * Time.deltaTime);
     }
 	#endregion
 	//Dead State
@@ -176,15 +186,47 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 	private void AttackState()
     {
         destination = playerPos.position;
-
+        Vector3 dir = new Vector3(playerPos.position.x - transform.position.x, transform.position.y, playerPos.position.z - transform.position.z);
         float distance = Vector3.Distance(transform.position, playerPos.position);
 
+        if (changeStyle)
+        {
+
+            timeToChangeStyle = timeSinceStart + Random.Range(10, 20); 
+            attackingState = (StorPaellaPanna)Random.Range(0, 2);
+            changeStyle = false;
+        }
+
+        if(timeToChangeStyle == timeSinceStart && !changeStyle)
+        {
+            changeStyle = true;
+        }
         if(distance >= 10)
         {
             state = State.Chase;
         }
 
-        switch (attackingState) 
+        if(dir.z < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+			if (distance >= 1f)
+			{
+				transform.Translate(-dir.normalized * attackStateSpeed * Time.deltaTime);
+			}
+		}
+        else if(dir.z > 0) 
+        {
+			transform.rotation = Quaternion.Euler(0, 0, 0);
+			if (distance >= 1f)
+			{
+				transform.Translate(dir.normalized * attackStateSpeed * Time.deltaTime);
+			}
+		}
+        
+		
+
+       
+		switch (attackingState) 
         { 
             case StorPaellaPanna.DefState:
                 DefensiveState(destination, distance);
