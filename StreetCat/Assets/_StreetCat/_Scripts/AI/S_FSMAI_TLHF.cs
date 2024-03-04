@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+//This is simple FSM and will be more random
 public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 {    
     
@@ -36,7 +37,11 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 
     float timeToChangeStyle;
     bool changeStyle;
+    float timeToBeStunned;
+    int gotHitTimes;
+    float timeSinceLatHit;
 
+    
     
 	//Animations
 	#region
@@ -106,15 +111,41 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             case State.Patrol:
                 PatrolState();
                 break;
-
-
-        }
+            case State.Stunned:
+                StunnedState();
+                break;
+		}
 
         timeSinceStart = Time.realtimeSinceStartup;
         if(health <= 0)
         {
             state = State.Attack;
         }
+    }
+
+    public void GotHit(float[] attackAndStun)
+    {
+        if(isBlocking)
+        {
+            //PlayAnim hit whilst blocking;
+        }
+        else
+        {
+            timeToBeStunned = attackAndStun[0] + timeSinceStart;
+            SendMessage("TakeDamage", attackAndStun[1]);
+            state = State.Stunned;
+            if(timeSinceLatHit + 1 < timeSinceStart)
+            {   timeSinceLatHit = timeSinceStart;
+                gotHitTimes++;
+            }
+            else
+            {
+                gotHitTimes = 0;
+            }
+        }
+
+
+        
     }
     //Idle state;
 	#region 
@@ -181,6 +212,18 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         }
     }
 	#endregion
+
+    private void StunnedState()
+    {
+        if(timeToBeStunned > timeSinceStart)
+        {
+            //Play Stunned Anim/Hit Anim
+        }
+        else
+        {
+            state = State.Attack;
+        }
+    }
 	//Attacking state
 	#region
 	private void AttackState()
@@ -256,6 +299,15 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             
         }
 
+        if(gotHitTimes >= 2)
+        {
+            isBlocking = true;
+        }
+        if(isBlocking)
+        {
+            //Play Blocking anim, defensiveStyle
+        }
+
 	}
 	#endregion
 
@@ -271,7 +323,14 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
                 usableAttacks.Add(attacks[i]);
             }
         }
-
+		if (gotHitTimes >= 2)
+		{
+			isBlocking = true;
+		}
+		if (isBlocking)
+		{
+			//Play Blocking anim, AttackingStyle
+		}
 	}
 	#endregion
 
@@ -288,7 +347,14 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
                 usableAttacks.Add(attacks[i]);
             }
         }
-
+		if (gotHitTimes >= 2)
+		{
+			isBlocking = true;
+		}
+		if (isBlocking)
+		{
+			//Play Blocking anim, defensiveStyle
+		}
 	}
 	#endregion
 
@@ -302,6 +368,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         Patrol,
         Attack,
         Dead,
+		Stunned,
     }
 	#endregion
 
