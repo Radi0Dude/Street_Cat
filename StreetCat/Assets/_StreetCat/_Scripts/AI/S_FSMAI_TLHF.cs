@@ -57,23 +57,34 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     [SerializeField]
     private string deathAnim;
 
-	[Foldout("AnimationNames")]
-	[AnimatorParam("animator")]
-    [SerializeField]
-    private string defAnim;
 
-	[Foldout("AnimationNames")]
-	[AnimatorParam("animator")]
+    [Foldout("AnimationNames")]
+    [AnimatorParam("animator")]
     [SerializeField]
-    private string midAnim;
+    private string attackStateAnim;
 
-	[Foldout("AnimationNames")]
-	[AnimatorParam("animator")]
+    [Foldout("AnimationNames")]
+    [AnimatorParam("animator")]
     [SerializeField]
-    private string aggAnim;
+    private string defensiveStyleAnim;
+
+    [Foldout("AnimationNames")]
+    [AnimatorParam("animator")]
+    [SerializeField]
+    private string middleStyleAnim;
+
+    [Foldout("AnimationNames")]
+    [AnimatorParam("animator")]
+    [SerializeField]
+    private string aggresiveStyleAnim;
+
+    [Foldout("AnimationNames")]
+    [AnimatorParam("animator")]
+    [SerializeField]
+    private string isBlockinAnim;
 	#endregion
 
-	[SerializeField]
+[SerializeField]
     private List<S_AttackList_TLHF> attacks = new List<S_AttackList_TLHF>();
 
 
@@ -232,6 +243,8 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         Vector3 dir = new Vector3(playerPos.position.x - transform.position.x, transform.position.y, playerPos.position.z - transform.position.z);
         float distance = Vector3.Distance(transform.position, playerPos.position);
 
+        animator.SetBool(attackStateAnim, true);
+
         if (changeStyle)
         {
 
@@ -298,14 +311,16 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 
             
         }
-
+        animator.SetBool(defensiveStyleAnim, true);
+        animator.SetBool(middleStyleAnim, false);
+        animator.SetBool(aggresiveStyleAnim, false);
         if(gotHitTimes >= 2)
         {
             isBlocking = true;
         }
         if(isBlocking)
         {
-            //Play Blocking anim, defensiveStyle
+            animator.SetBool(isBlockinAnim, true);
         }
 
 	}
@@ -323,13 +338,16 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
                 usableAttacks.Add(attacks[i]);
             }
         }
+		animator.SetBool(defensiveStyleAnim, false);
+		animator.SetBool(middleStyleAnim, true);
+		animator.SetBool(aggresiveStyleAnim, false);
 		if (gotHitTimes >= 2)
 		{
 			isBlocking = true;
 		}
 		if (isBlocking)
 		{
-			//Play Blocking anim, AttackingStyle
+			animator.SetBool(isBlockinAnim, true);
 		}
 	}
 	#endregion
@@ -347,13 +365,16 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
                 usableAttacks.Add(attacks[i]);
             }
         }
+		animator.SetBool(defensiveStyleAnim, false);
+		animator.SetBool(middleStyleAnim, false);
+		animator.SetBool(aggresiveStyleAnim, true);
 		if (gotHitTimes >= 2)
 		{
 			isBlocking = true;
 		}
 		if (isBlocking)
 		{
-			//Play Blocking anim, defensiveStyle
+            animator.SetBool(isBlockinAnim, true);
 		}
 	}
 	#endregion
