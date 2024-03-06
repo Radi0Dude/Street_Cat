@@ -41,11 +41,17 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     int gotHitTimes;
     float timeSinceLatHit;
 
-    
-    
-	//Animations
-	#region
+
+
+    //Animations
+    #region
+    [SerializeField]
 	private Animator animator;
+
+    [Foldout("AnimationNames")]
+    [AnimatorParam("animator")]
+    [SerializeField]
+    private string animMoveName;
 
 	[Foldout("AnimationNames")]
 	[AnimatorParam("animator")]
@@ -206,7 +212,10 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         {
             state = State.Idle;
         }
+        if(dist > 0)
+        {
 
+        }
         transform.Translate(dir.normalized * speed * Time.deltaTime);
     }
 	#endregion

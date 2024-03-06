@@ -246,6 +246,7 @@ MonoBehaviour:
   attackTime: 0
   playerTag: Player
   animator: {fileID: 704412165065333619}
+  animMoveName: Move_X
   IdleAnim: 
   deathAnim: 
   attackStateAnim: Fighting
