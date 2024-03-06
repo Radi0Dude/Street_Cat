@@ -23,7 +23,8 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField]
 	string enemyTag;
 
-	int styleChanger;
+	[ReadOnly]
+	public int styleChanger;
 
 	float attackDamage;
 	bool cooldownMidhAttack;
