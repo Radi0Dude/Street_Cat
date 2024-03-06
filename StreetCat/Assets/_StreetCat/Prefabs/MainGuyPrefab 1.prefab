@@ -1293,8 +1293,13 @@ MonoBehaviour:
   - {fileID: 3523641393910962449}
   - {fileID: 5556535607125984548}
   hurtBoxLayer: HurtBox
-  hurtBoxTag: HitBox
+  hurtBoxTag: 
+  enemyTag: 
   mats: {fileID: 0}
+  animator: {fileID: 0}
+  lowAttack: 
+  highAttack: 
+  timeToBeStunned: 0
 --- !u!114 &6884960033941613058
 MonoBehaviour:
   m_ObjectHideFlags: 0

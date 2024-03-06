@@ -15,14 +15,21 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     private float speed;
     [SerializeField] 
     private float attackStateSpeed;
+    [SerializeField] 
+    private int maxHealt;
     [SerializeField]
-    private float health;
+    private int health;
     [SerializeField]
     private float attackTime;
 
     [Tag]
     [SerializeField]
     private string playerTag;
+
+    [Required("Else it will always change instantly")]
+    [SerializeField]
+    float timeUntilPlayerUpdate;
+    float timeForStyleUpdate;
 
     //universal bools
     private bool isDead;
@@ -34,6 +41,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     private float timeUnitlAnimChange;
 
     private GameObject player;
+    private int playerstyle;
 
     float timeToChangeStyle;
     bool changeStyle;
@@ -41,10 +49,11 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     int gotHitTimes;
     float timeSinceLatHit;
 
-    
-    
-	//Animations
-	#region
+
+
+    //Animations
+    #region
+    [SerializeField]
 	private Animator animator;
 
 	[Foldout("AnimationNames")]
@@ -99,15 +108,18 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         animator = GetComponent<Animator>();
 
         player = GameObject.FindGameObjectWithTag(playerTag);
+        playerstyle = player.GetComponent<S_HitboxCollider_TLHF>().styleChanger;
 
 		playerPos = player.transform;
         Debug.Log(playerPos.position + "Hello");
+        health = maxHealt;
 
 	}
 
     protected override void FMSUpdate()
 	{
 		Debug.Log(playerPos.position + "Hello");
+		playerstyle = player.GetComponent<S_HitboxCollider_TLHF>().styleChanger;
 		switch (state)
         {
             case State.Idle:
@@ -171,7 +183,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         }      
         if(timeUnitlAnimChange <= timeSinceStart && idleTime == false)
         {
-
+            //This is for an idle change
         }
         if(Vector3.Distance(this.transform.position, playerPos.position) <= 30)
         {
@@ -210,7 +222,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         transform.Translate(dir.normalized * speed * Time.deltaTime);
     }
 	#endregion
-	//Dead State
+	//Dead state
 	#region
 	private void DeadState()
     {
@@ -223,8 +235,9 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         }
     }
 	#endregion
-
-    private void StunnedState()
+    //Stunned state
+	#region
+	private void StunnedState()
     {
         if(timeToBeStunned > timeSinceStart)
         {
@@ -235,6 +248,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             state = State.Attack;
         }
     }
+	#endregion
 	//Attacking state
 	#region
 	private void AttackState()
@@ -243,6 +257,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         Vector3 dir = new Vector3(playerPos.position.x - transform.position.x, transform.position.y, playerPos.position.z - transform.position.z);
         float distance = Vector3.Distance(transform.position, playerPos.position);
 
+<<<<<<< HEAD
         animator.SetBool(attackStateAnim, true);
 
         if (changeStyle)
@@ -252,6 +267,9 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             attackingState = (StorPaellaPanna)Random.Range(0, 2);
             changeStyle = false;
         }
+=======
+        
+>>>>>>> 6f077e7f71643cf9344e826f1593e1a1e36ff189
 
         if(timeToChangeStyle == timeSinceStart && !changeStyle)
         {
@@ -278,9 +296,26 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 				transform.Translate(dir.normalized * attackStateSpeed * Time.deltaTime);
 			}
 		}
-        
-		
 
+
+        if (timeForStyleUpdate <= timeSinceStart)
+        {
+            switch (playerstyle)
+            {
+                case 0:
+                    attackingState = StorPaellaPanna.MidState;
+                    break;
+                case 1:
+                    attackingState = StorPaellaPanna.AggState; 
+                    break;
+                case 2:
+                    attackingState = StorPaellaPanna.DefState; 
+                    break;
+            }
+
+            timeForStyleUpdate = timeUntilPlayerUpdate + timeSinceStart;
+
+		}
        
 		switch (attackingState) 
         { 
@@ -337,6 +372,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             {
                 usableAttacks.Add(attacks[i]);
             }
+<<<<<<< HEAD
         }
 		animator.SetBool(defensiveStyleAnim, false);
 		animator.SetBool(middleStyleAnim, true);
@@ -349,6 +385,37 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 		{
 			animator.SetBool(isBlockinAnim, true);
 		}
+=======
+        }		
+        if (gotHitTimes >= 2)
+		{
+			isBlocking = true;
+		}
+        if(usableAttacks.Count != 0)
+        {
+		    if (isBlocking)
+		    {
+			    //Play Blocking anim, AttackingStyle
+                
+
+		    }
+            if (!isBlocking)
+            {
+                if (health > maxHealt / 2)
+                {
+                    //will have higher chance of holding block
+                }
+                else 
+                { 
+                        
+                }
+            }
+
+             
+        }
+
+
+>>>>>>> 6f077e7f71643cf9344e826f1593e1a1e36ff189
 	}
 	#endregion
 
