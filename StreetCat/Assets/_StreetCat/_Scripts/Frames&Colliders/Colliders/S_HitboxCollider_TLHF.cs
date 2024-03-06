@@ -19,6 +19,10 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField]
 	string hurtBoxTag;
 
+	[Tag]
+	[SerializeField]
+	string enemyTag;
+
 	int styleChanger;
 
 	float attackDamage;
@@ -39,6 +43,8 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	[SerializeField]
 	private string highAttack;
 
+	[SerializeField]
+	float timeToBeStunned;
 	
 
 	private void Start()
@@ -155,7 +161,19 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 				break;
 				
 			}
-			col.SendMessageUpwards("TakeDamage", attackDamage);
+			if(transform.root.tag == "Player")
+			{
+				col.SendMessageUpwards("TakeDamage", attackDamage);
+			}
+
+			if(transform.root.tag == enemyTag)
+			{
+				float[] sentObjects = new float[2];
+				sentObjects[0] = timeToBeStunned;
+				sentObjects[1] = attackDamage;
+				col.SendMessageUpwards("gotHit", sentObjects);
+			}
+
 		}
 	}
 
