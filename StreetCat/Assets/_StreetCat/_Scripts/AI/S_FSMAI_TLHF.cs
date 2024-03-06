@@ -53,6 +53,11 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     [SerializeField]
     private string animMoveName;
 
+    [Foldout("AnimationNames")]
+    [AnimatorParam("animator")]
+    [SerializeField]
+    private string movementAnim;
+
 	[Foldout("AnimationNames")]
 	[AnimatorParam("animator")]
     [SerializeField]
@@ -199,11 +204,14 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 	#region
 	private void CHaseState()
     {
+        
         destination = playerPos.position;
 
         float dist = Vector3.Distance(transform.position, playerPos.position);
 
         Vector3 dir = playerPos.position - transform.position;
+        animator.SetBool(movementAnim, true);
+        animator.SetBool(attackStateAnim, false);
         if (dist <= 10)
         {
             state = State.Attack;
@@ -212,10 +220,14 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         {
             state = State.Idle;
         }
-        if(dist > 0)
+        if(dist < 0)
         {
-
+            animator.SetFloat(animMoveName, -1);
         }
+        if (dir.z > 0)
+        {
+			animator.SetFloat(animMoveName, 1);
+		}
         transform.Translate(dir.normalized * speed * Time.deltaTime);
     }
 	#endregion
