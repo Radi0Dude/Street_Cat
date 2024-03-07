@@ -23,6 +23,10 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     [Tag]
     [SerializeField]
     private string playerTag;
+    [SerializeField]
+    S_HitboxCollider_TLHF hitboxColliderScript;
+
+
 
     //universal bools
     private bool isDead;
@@ -33,6 +37,11 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     private bool idleTime;
     private float timeUnitlAnimChange;
 
+    [SerializeField]
+    private Collider highHitCol;
+    [SerializeField]
+    private Collider lowHitCol;
+
     private GameObject player;
 
     float timeToChangeStyle;
@@ -40,6 +49,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     float timeToBeStunned;
     int gotHitTimes;
     float timeSinceLatHit;
+    float timeUntilNextattack;
 
 
 
@@ -95,7 +105,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     private string isBlockinAnim;
 	#endregion
 
-[SerializeField]
+    [SerializeField]
     private List<S_AttackList_TLHF> attacks = new List<S_AttackList_TLHF>();
 
 
@@ -272,7 +282,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         {
 
             timeToChangeStyle = timeSinceStart + Random.Range(10, 20); 
-            attackingState = (StorPaellaPanna)Random.Range(0, 2);
+            attackingState = (StorPaellaPanna)Random.Range(1, 1);
             changeStyle = false;
         }
 
@@ -327,7 +337,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         List<ScriptableObject> usableAttacks = new List<ScriptableObject>();
         for (int i = 0; i < attacks.Count; i++)
         {
-            if (attacks[i].style == 1)
+            if (attacks[i].style == 1 || attacks[i].isUniversal)
             {
                 usableAttacks.Add(attacks[i]);
             }
@@ -353,10 +363,10 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 	#region
 	private void MiddleState(Vector3 dest, float dist)
 	{
-        List<ScriptableObject> usableAttacks = new List<ScriptableObject>();
+        List<S_AttackList_TLHF> usableAttacks = new List<S_AttackList_TLHF>();
         for(int i = 0; i < attacks.Count; i++)
         {
-            if (attacks[i].style == 2)
+            if (attacks[i].style == 2 || attacks[i].isUniversal)
             {
                 usableAttacks.Add(attacks[i]);
             }
@@ -364,10 +374,43 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 		animator.SetBool(defensiveStyleAnim, false);
 		animator.SetBool(middleStyleAnim, true);
 		animator.SetBool(aggresiveStyleAnim, false);
+
+
+
 		if (gotHitTimes >= 2)
 		{
 			isBlocking = true;
 		}
+
+        if (!isBlocking && !isAttacking)
+        {
+            int randomNum = Random.Range(0, usableAttacks.Count);
+
+            if (usableAttacks[randomNum].attackHighOrLow)
+            {
+                hitboxColliderScript.kickAttack(highHitCol, usableAttacks[randomNum].damage);
+                animator.SetBool(usableAttacks[randomNum].attackanim, true);
+            }
+            else
+            {
+				hitboxColliderScript.kickAttack(highHitCol, usableAttacks[randomNum].damage);
+				animator.SetBool(usableAttacks[randomNum].attackanim, true);
+			}
+            isAttacking = true;
+        }
+        if (isAttacking) 
+        {
+            if (timeUntilNextattack < timeSinceStart)
+            {
+                timeUntilNextattack = timeSinceStart + Random.Range(0.5f, 3);
+
+            }
+            else
+            {
+                isAttacking = false;
+            }
+            
+        }
 		if (isBlocking)
 		{
 			animator.SetBool(isBlockinAnim, true);
@@ -383,7 +426,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         List<ScriptableObject> usableAttacks = new List<ScriptableObject>();
         for(int i = 0; i < attacks.Count; i++)
         {
-            if (attacks[i].style == 3)
+            if (attacks[i].style == 3 || attacks[i].isUniversal)
             {
                 usableAttacks.Add(attacks[i]);
             }

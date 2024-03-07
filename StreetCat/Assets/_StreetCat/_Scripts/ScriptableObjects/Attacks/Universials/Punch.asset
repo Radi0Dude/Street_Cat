@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5542cb6191e64074693c3c0b0a0b3d03, type: 3}
-  m_Name: Herlo
+  m_Name: Punch
   m_EditorClassIdentifier: 
   attackName: Punch
   style: 1
-  damage: 10
+  damage: 20
   range: 0.5
-  attack: AttackAnim
+  attack: Att/Punch
   counter: []

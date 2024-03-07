@@ -135,7 +135,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	}
 
 	//
-	private void kickAttack(Collider collider)
+	public void kickAttack(Collider collider, int damage)
 	{
 		Debug.Log(collider.name);
 		Debug.Log(collider.bounds + "This is bounds");
@@ -152,7 +152,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 			switch(col.tag)
 			{
 				case "HurtBox":
-					attackDamage = 30;
+					attackDamage = damage;
 					Debug.Log("Herlo");
 
 				break;
@@ -181,7 +181,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		
 		cooldownMidhAttack = true;
-		kickAttack(attackHitboxes[0]);
+		kickAttack(attackHitboxes[0], 20);
 		yield return new WaitForSeconds(0.5f);
 		animator.SetBool(highAttack, false);
 		cooldownMidhAttack = false;
@@ -190,7 +190,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	{
 		
 		cooldownLowAttack = true;
-		kickAttack(attackHitboxes[1]);
+		kickAttack(attackHitboxes[1], 20);
 		yield return new WaitForSeconds(0.5f);
 		animator.SetBool(lowAttack, false);
 		cooldownLowAttack = false;
