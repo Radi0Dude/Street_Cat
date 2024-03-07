@@ -118,7 +118,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 
     protected override void FMSUpdate()
 	{
-		Debug.Log(playerPos.position + "Hello");
+		//Debug.Log(playerPos.position + "Hello");
 		switch (state)
         {
             case State.Idle:
@@ -184,7 +184,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         {
 
         }
-        if(Vector3.Distance(this.transform.position, playerPos.position) <= 30)
+        if(Vector3.Distance(this.transform.position, playerPos.position) <= 50)
         {
             state = State.Chase;
         }
@@ -206,11 +206,13 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     {
         
         destination = playerPos.position;
-
+ 
         float dist = Vector3.Distance(transform.position, playerPos.position);
 
         Vector3 dir = playerPos.position - transform.position;
-        animator.SetBool(movementAnim, true);
+        Debug.Log(dir);
+
+		animator.SetBool(movementAnim, true);
         animator.SetBool(attackStateAnim, false);
         if (dist <= 10)
         {
@@ -220,7 +222,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         {
             state = State.Idle;
         }
-        if(dist < 0)
+        if(dir.z < 0)
         {
             animator.SetFloat(animMoveName, -1);
         }
