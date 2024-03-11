@@ -525,13 +525,13 @@ MonoBehaviour:
   health: 100
   attackTime: 1
   playerTag: Player
-  hitboxColliderScript: {fileID: 0}
+  hitboxColliderScript: {fileID: 4835511344251089500}
   highHitCol: {fileID: 8273995801936041823}
   lowHitCol: {fileID: 6129629055860303937}
   animator: {fileID: 2202630288282762770}
   animMoveName: Move_X
   movementAnim: 
-  IdleAnim: 
+  IdleAnim: Attack/LowKick
   deathAnim: 
   attackStateAnim: Fighting
   defensiveStyleAnim: Style/Defensive

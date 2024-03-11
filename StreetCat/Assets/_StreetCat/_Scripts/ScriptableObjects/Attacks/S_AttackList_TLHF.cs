@@ -29,7 +29,8 @@ public class S_AttackList_TLHF : ScriptableObject
     [InfoBox("How big is the collider?", EInfoBoxType.Normal)]
     public float range;
 
-   
+    [SerializeField]
+    RuntimeAnimatorController animator;
 
     [AnimatorParam("animator")]
     public string attackanim;

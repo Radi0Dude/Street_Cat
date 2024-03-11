@@ -103,8 +103,9 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     [AnimatorParam("animator")]
     [SerializeField]
     private string isBlockinAnim;
-	#endregion
+    #endregion
 
+    [Expandable]
     [SerializeField]
     private List<S_AttackList_TLHF> attacks = new List<S_AttackList_TLHF>();
 
@@ -220,7 +221,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         float dist = Vector3.Distance(transform.position, playerPos.position);
 
         Vector3 dir = playerPos.position - transform.position;
-        Debug.Log(dir);
+
 
 		animator.SetBool(movementAnim, true);
         animator.SetBool(attackStateAnim, false);
@@ -318,23 +319,24 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 		switch (attackingState) 
         { 
             case StorPaellaPanna.DefState:
-                DefensiveState(destination, distance);
+                DefensiveState(distance);
                 break;
             case StorPaellaPanna.MidState:
-                MiddleState(destination, distance);
+                MiddleState(distance);
                 break;
             case StorPaellaPanna.AggState:
-                AggresiveState(destination, distance);
+                AggresiveState(distance);
                 break;
         }
+        Debug.Log(attackingState + "is The current attacking state");
     }
 	#endregion
 	//defensive state
 	#region
-	private void DefensiveState(Vector3 dest, float dist)
+	private void DefensiveState(float dist)
 	{
         //play Defensive state animation
-        List<ScriptableObject> usableAttacks = new List<ScriptableObject>();
+        List<S_AttackList_TLHF> usableAttacks = new List<S_AttackList_TLHF>();
         for (int i = 0; i < attacks.Count; i++)
         {
             if (attacks[i].style == 1 || attacks[i].isUniversal)
@@ -351,7 +353,40 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         {
             isBlocking = true;
         }
-        if(isBlocking)
+
+		if (!isBlocking && !isAttacking)
+		{
+			int randomNum = Random.Range(0, usableAttacks.Count);
+
+			if (usableAttacks[randomNum].attackHighOrLow)
+			{
+				hitboxColliderScript.kickAttack(highHitCol, usableAttacks[randomNum].damage);
+				animator.Play(usableAttacks[randomNum].attackanim);
+			}
+			else
+			{
+				hitboxColliderScript.kickAttack(lowHitCol, usableAttacks[randomNum].damage);
+				animator.Play(usableAttacks[randomNum].attackanim);
+			}
+			isAttacking = true;
+		}
+		if (isAttacking)
+		{
+            
+
+			if (timeUntilNextattack < timeSinceStart)
+			{
+				timeUntilNextattack = timeSinceStart + Random.Range(1f, 3);
+
+			}
+			else
+			{
+				isAttacking = false;
+			}
+
+		}
+
+		if (isBlocking)
         {
             animator.SetBool(isBlockinAnim, true);
         }
@@ -361,7 +396,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 
     //Middle state;
 	#region
-	private void MiddleState(Vector3 dest, float dist)
+	private void MiddleState(float dist)
 	{
         List<S_AttackList_TLHF> usableAttacks = new List<S_AttackList_TLHF>();
         for(int i = 0; i < attacks.Count; i++)
@@ -369,6 +404,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             if (attacks[i].style == 2 || attacks[i].isUniversal)
             {
                 usableAttacks.Add(attacks[i]);
+                Debug.Log(usableAttacks.Count);
             }
         }
 		animator.SetBool(defensiveStyleAnim, false);
@@ -389,12 +425,12 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             if (usableAttacks[randomNum].attackHighOrLow)
             {
                 hitboxColliderScript.kickAttack(highHitCol, usableAttacks[randomNum].damage);
-                animator.SetBool(usableAttacks[randomNum].attackanim, true);
+                animator.Play(usableAttacks[randomNum].attackanim);
             }
             else
             {
-				hitboxColliderScript.kickAttack(highHitCol, usableAttacks[randomNum].damage);
-				animator.SetBool(usableAttacks[randomNum].attackanim, true);
+				hitboxColliderScript.kickAttack(lowHitCol, usableAttacks[randomNum].damage);
+				animator.Play(usableAttacks[randomNum].attackanim);
 			}
             isAttacking = true;
         }
@@ -402,7 +438,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         {
             if (timeUntilNextattack < timeSinceStart)
             {
-                timeUntilNextattack = timeSinceStart + Random.Range(0.5f, 3);
+                timeUntilNextattack = timeSinceStart + Random.Range(1f, 3);
 
             }
             else
@@ -420,10 +456,11 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 
 	//Aggresive State
 	#region 
-	private void AggresiveState(Vector3 dest, float dist)
+	private void AggresiveState(float dist)
 	{
+        
         //play aggresive state animation
-        List<ScriptableObject> usableAttacks = new List<ScriptableObject>();
+        List<S_AttackList_TLHF> usableAttacks = new List<S_AttackList_TLHF>();
         for(int i = 0; i < attacks.Count; i++)
         {
             if (attacks[i].style == 3 || attacks[i].isUniversal)
@@ -438,6 +475,39 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 		{
 			isBlocking = true;
 		}
+
+
+		if (!isBlocking && !isAttacking)
+		{
+			int randomNum = Random.Range(0, usableAttacks.Count);
+
+			if (usableAttacks[randomNum].attackHighOrLow)
+			{
+				hitboxColliderScript.kickAttack(highHitCol, usableAttacks[randomNum-1].damage);
+				animator.Play(usableAttacks[randomNum].attackanim);
+			}
+			else
+			{
+				hitboxColliderScript.kickAttack(lowHitCol, usableAttacks[randomNum-1].damage);
+				animator.Play(usableAttacks[randomNum].attackanim);
+			}
+			isAttacking = true;
+		}
+		if (isAttacking)
+		{
+           
+			if (timeUntilNextattack < timeSinceStart)
+			{
+				timeUntilNextattack = timeSinceStart + Random.Range(1f, 3);
+
+			}
+			else
+			{
+				isAttacking = false;
+			}
+
+		}
+
 		if (isBlocking)
 		{
             animator.SetBool(isBlockinAnim, true);

@@ -13,8 +13,11 @@ MonoBehaviour:
   m_Name: Kick
   m_EditorClassIdentifier: 
   attackName: Kick
+  attackHighOrLow: 0
+  isUniversal: 1
   style: 1
   damage: 25
   range: 1
-  attack: Att/Kick
+  animator: {fileID: 0}
+  attackanim: Att/LowKick
   counter: []

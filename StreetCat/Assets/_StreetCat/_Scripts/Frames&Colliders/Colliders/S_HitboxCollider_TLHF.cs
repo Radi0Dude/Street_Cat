@@ -153,7 +153,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 			{
 				case "HurtBox":
 					attackDamage = damage;
-					Debug.Log("Herlo");
+					Debug.Log("it did " + damage + " damage");
 
 				break;
 				default:
