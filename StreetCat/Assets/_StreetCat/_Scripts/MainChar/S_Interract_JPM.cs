@@ -13,7 +13,7 @@ public class S_Interract_JPM : MonoBehaviour
     private string interactTag;
 
     [SerializeField]
-    Collider thisInteract;
+    GameObject showThis;
 
 	[Scene]
 	[SerializeField]
@@ -21,12 +21,17 @@ public class S_Interract_JPM : MonoBehaviour
 
 	bool canChangeScene;
 
+	private void Start()
+	{
+		showThis.SetActive(false);
+	}
+
 	private void OnTriggerStay(Collider other)
 	{
 		if (other.tag == interactTag)
 		{
 			canChangeScene = true;
-			
+			showThis.SetActive(true);
 		}
 	}
 	private void OnTriggerExit(Collider other)
