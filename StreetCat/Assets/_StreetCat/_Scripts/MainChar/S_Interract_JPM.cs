@@ -15,40 +15,59 @@ public class S_Interract_JPM : MonoBehaviour
     [SerializeField]
     Collider thisInteract;
 
+	[Scene]
+	[SerializeField]
+	string sceneName;
+
+	bool canChangeScene;
+
 	private void OnTriggerStay(Collider other)
 	{
 		if (other.tag == interactTag)
 		{
+			canChangeScene = true;
+			
+		}
+	}
+	private void OnTriggerExit(Collider other)
+	{
+		if (other.tag == interactTag)
+		{
+			canChangeScene = false;
 
-			if (Input.GetKeyDown(KeyCode.E))
+		}
+	}
+	private void Update()
+	{
+		if(canChangeScene)
+		{
+			if(Input.GetKeyUp(KeyCode.E)) 
 			{
-
-				other.GetComponent<S_Interractable_JPM>().Interractable();
+				SceneManager.LoadScene(sceneName);
 			}
 		}
 	}
 
-	
 
 	//public void Interract(Collider collider)
- //   {
- //       Collider[] colliders = Physics.OverlapBox(thisInteract.bounds.center, thisInteract.bounds.extents, Quaternion.identity, LayerMask.GetMask(interractLayer));
- //       foreach (Collider col in colliders) 
- //       {
- //           if(col.transform.root == transform)
- //           {
- //               continue;
- //           }
- //           switch (col.tag)
- //           {
+	//   {
+	//       Collider[] colliders = Physics.OverlapBox(thisInteract.bounds.center, thisInteract.bounds.extents, Quaternion.identity, LayerMask.GetMask(interractLayer));
+	//       foreach (Collider col in colliders) 
+	//       {
+	//           if(col.transform.root == transform)
+	//           {
+	//               continue;
+	//           }
+	//           switch (col.tag)
+	//           {
 
- //               case "Interract":
- //                   col.SendMessageUpwards("Interractable");
- //                   break;
- //           }
-            
- //       }
- //   }
-    
-   
+	//               case "Interract":
+	//                   col.SendMessageUpwards("Interractable");
+	//                   break;
+	//           }
+
+	//       }
+	//   }
+
+
 }
