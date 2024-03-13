@@ -1603,7 +1603,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2376687294686575403, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2376687294686575403, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1611,7 +1611,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2376687294686575403, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 2376687294686575403, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1623,7 +1623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2376687294686575403, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 2376687294686575403, guid: 8d41e4cc668428a4193ec08db9fc6303, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -2287,7 +2287,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7b60af21fbd6614981f3415f68fd4f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1245785394}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a7b60af21fbd6614981f3415f68fd4f5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1245785393}
   m_SourcePrefab: {fileID: 100100000, guid: a7b60af21fbd6614981f3415f68fd4f5, type: 3}
 --- !u!4 &738710388 stripped
 Transform:
@@ -5015,6 +5021,47 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2823ff6d01c00c44fb6bac580ff98263, type: 3}
   m_PrefabInstance: {fileID: 1223977475}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1245785390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a7b60af21fbd6614981f3415f68fd4f5, type: 3}
+  m_PrefabInstance: {fileID: 738710387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1245785393
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245785390}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.013745893, y: 0.009886876, z: 0.026586542}
+  m_Center: {x: -0.000000006463915, y: 0.0041035702, z: 0.00023859456}
+--- !u!114 &1245785394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245785390}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca7b70fd7cb18e44923929db3c5e1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactTag: Player
+  thisInteract: {fileID: 0}
+  sceneName: HotelLooby
 --- !u!1 &1247559798
 GameObject:
   m_ObjectHideFlags: 0
@@ -6773,8 +6820,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551592250}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.08645628, y: 0.14144926, z: -0.012401747, w: 0.986085}
-  m_LocalPosition: {x: -5.17, y: 3.25, z: -17.65}
+  m_LocalRotation: {x: 0.090969704, y: 0.07549364, z: -0.0069162976, w: 0.99296397}
+  m_LocalPosition: {x: -1.1700003, y: 2.75, z: -7.6499996}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10588,8 +10635,55 @@ PrefabInstance:
     - {fileID: 336271658553974036, guid: 6e73f8939804295459e2bf2d1765188b, type: 3}
     - {fileID: 2875937683589995345, guid: 6e73f8939804295459e2bf2d1765188b, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e73f8939804295459e2bf2d1765188b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1931453785}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e73f8939804295459e2bf2d1765188b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1931453784}
   m_SourcePrefab: {fileID: 100100000, guid: 6e73f8939804295459e2bf2d1765188b, type: 3}
+--- !u!1 &1931453783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6e73f8939804295459e2bf2d1765188b, type: 3}
+  m_PrefabInstance: {fileID: 1931453782}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1931453784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931453783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eca7b70fd7cb18e44923929db3c5e1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactTag: Player
+  thisInteract: {fileID: 0}
+  sceneName: HotelLooby
+--- !u!65 &1931453785
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931453783}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.352226, y: 7.7514143, z: 6.651685}
+  m_Center: {x: -1.1965107, y: 3.3757112, z: -2.825842}
 --- !u!1001 &1949349336
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10611,36 +10705,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4044518754863627929, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
+      propertyPath: m_TrackedObjectOffset.y
+      value: 1.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 4044518754863627929, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_TrackedObjectOffset.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.17
+      value: -1.1700003
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.25
+      value: 2.75
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.65
+      value: -7.6499996
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.986085
+      value: 0.99296397
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.08645628
+      value: 0.090969704
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.14144926
+      value: 0.07549364
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.012401747
+      value: -0.0069162976
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -10657,6 +10755,14 @@ PrefabInstance:
     - target: {fileID: 5937259864309552419, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_Name
       value: Virtual Camera
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937580125075105739, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
+      propertyPath: m_FollowOffset.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6937580125075105739, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
+      propertyPath: m_FollowOffset.z
+      value: -4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
