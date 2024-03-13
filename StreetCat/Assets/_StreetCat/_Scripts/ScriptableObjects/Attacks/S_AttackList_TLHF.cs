@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using NaughtyAttributes;
-using UnityEditor.Animations;
+
 
 [CreateAssetMenu]
 public class S_AttackList_TLHF : ScriptableObject

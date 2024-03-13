@@ -21,6 +21,8 @@ public class S_Interract_JPM : MonoBehaviour
 
 	bool canChangeScene;
 
+	
+
 	private void Start()
 	{
 		showThis.SetActive(false);
