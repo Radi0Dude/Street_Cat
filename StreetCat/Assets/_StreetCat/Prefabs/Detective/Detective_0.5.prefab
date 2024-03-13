@@ -226,11 +226,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackHitboxes: []
   hurtBoxLayer: Default
-  hurtBoxTag: Default
+  hurtBoxTag: 
+  enemyTag: 
   mats: {fileID: 0}
-  D: {fileID: 0}
-  M: {fileID: 0}
-  A: {fileID: 0}
+  animator: {fileID: 0}
+  lowAttack: 
+  highAttack: 
+  timeToBeStunned: 0
 --- !u!114 &1761084827568510458
 MonoBehaviour:
   m_ObjectHideFlags: 0

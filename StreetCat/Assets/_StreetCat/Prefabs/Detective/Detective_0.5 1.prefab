@@ -799,7 +799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae7ce11e85859704483e1176de672303, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealthAmount: 0
+  maxHealthAmount: 100
   healthslider: {fileID: 0}
 --- !u!114 &5407068654109427735
 MonoBehaviour:
@@ -836,10 +836,12 @@ MonoBehaviour:
   - {fileID: 6129629055860303937}
   hurtBoxLayer: HurtBox
   hurtBoxTag: HurtBox
+  enemyTag: 
   mats: {fileID: 0}
   animator: {fileID: 2202630288282762770}
   lowAttack: Att/Punch
   highAttack: Att/Kick
+  timeToBeStunned: 0
 --- !u!114 &5430042878845534160
 MonoBehaviour:
   m_ObjectHideFlags: 0

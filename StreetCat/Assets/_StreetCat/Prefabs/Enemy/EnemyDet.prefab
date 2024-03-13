@@ -531,7 +531,7 @@ MonoBehaviour:
   animator: {fileID: 2202630288282762770}
   animMoveName: Move_X
   movementAnim: 
-  IdleAnim: Attack/LowKick
+  IdleAnim: 
   deathAnim: 
   attackStateAnim: Fighting
   defensiveStyleAnim: Style/Defensive

@@ -137,9 +137,9 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 	//
 	public void kickAttack(Collider collider, int damage)
 	{
-		Debug.Log(collider.name);
-		Debug.Log(collider.bounds + "This is bounds");
-		Debug.Log(collider.bounds.extents + "THis is extents");
+		//Debug.Log(collider.name);
+		//Debug.Log(collider.bounds + "This is bounds");
+		//Debug.Log(collider.bounds.extents + "THis is extents");
 	
 		Collider[] cols = Physics.OverlapBox(collider.bounds.center, collider.bounds.extents, Quaternion.identity, LayerMask.GetMask(hurtBoxLayer));
 		Debug.Log(cols.Length);
@@ -164,6 +164,7 @@ public class S_HitboxCollider_TLHF : MonoBehaviour
 			if(transform.root.tag == "Player")
 			{
 				col.SendMessageUpwards("TakeDamage", attackDamage);
+				Debug.Log("Got hit");
 			}
 
 			if(transform.root.tag == enemyTag)

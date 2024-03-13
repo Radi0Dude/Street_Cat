@@ -148,18 +148,26 @@ public class S_FollowPlayerPosCamera_TLHF : MonoBehaviour
 	
 	private void CalculateDistancePlayerOne()
 	{
-		playerXDistance = pointPos.position.z - playerOnePos.position.z;
-		cameraXDistance = pointPos.position.z - transform.position.z;
-		difference = cameraXDistance / playerXDistance;
+		if(pointPos != null) 
+		{ 
+			playerXDistance = pointPos.position.z - playerOnePos.position.z;
+			cameraXDistance = pointPos.position.z - transform.position.z;
+			difference = cameraXDistance / playerXDistance;
 
 
-		if(hasMoved.x != playerOnePos.position.x)
-		{
-			float distance = playerOnePos.position.z - hasMoved.z;
-			transform.position = new Vector3(transform.position.x, 0, playerOnePos.position.z + (distance * difference));
+			if(hasMoved.x != playerOnePos.position.x)
+			{
+				float distance = playerOnePos.position.z - hasMoved.z;
+				transform.position = new Vector3(transform.position.x, 0, playerOnePos.position.z + (distance * difference));
 
-			hasMoved.z = playerOnePos.position.z;
+				hasMoved.z = playerOnePos.position.z;
+			}
 		}
+		else
+		{
+			transform.position = playerOnePos.position;
+		}
+
 	}
 	private void CalculateDistancePlayerIfTwo()
 	{

@@ -50,13 +50,15 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     int gotHitTimes;
     float timeSinceLatHit;
     float timeUntilNextattack;
+    
+    [SerializeField]
+	private Animator animator;
 
-
+    
 
     //Animations
     #region
-    [SerializeField]
-	private Animator animator;
+
 
     [Foldout("AnimationNames")]
     [AnimatorParam("animator")]
@@ -353,7 +355,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
         {
             isBlocking = true;
         }
-
+        Debug.Log(isAttacking + " this is is attacking");
 		if (!isBlocking && !isAttacking)
 		{
 			int randomNum = Random.Range(0, usableAttacks.Count);
@@ -361,12 +363,12 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 			if (usableAttacks[randomNum].attackHighOrLow)
 			{
 				hitboxColliderScript.kickAttack(highHitCol, usableAttacks[randomNum].damage);
-				animator.Play(usableAttacks[randomNum].attackanim);
+				animator.SetTrigger(usableAttacks[randomNum].attackanim);
 			}
 			else
 			{
 				hitboxColliderScript.kickAttack(lowHitCol, usableAttacks[randomNum].damage);
-				animator.Play(usableAttacks[randomNum].attackanim);
+				animator.SetTrigger(usableAttacks[randomNum].attackanim);
 			}
 			isAttacking = true;
 		}
@@ -377,12 +379,10 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 			if (timeUntilNextattack < timeSinceStart)
 			{
 				timeUntilNextattack = timeSinceStart + Random.Range(1f, 3);
+                isAttacking = false;
+				Debug.Log("Ehh whatttt?");
+			}
 
-			}
-			else
-			{
-				isAttacking = false;
-			}
 
 		}
 
@@ -397,7 +397,10 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
     //Middle state;
 	#region
 	private void MiddleState(float dist)
-	{
+	{		
+        animator.SetBool(defensiveStyleAnim, false);
+		animator.SetBool(middleStyleAnim, true);
+		animator.SetBool(aggresiveStyleAnim, false);
         List<S_AttackList_TLHF> usableAttacks = new List<S_AttackList_TLHF>();
         for(int i = 0; i < attacks.Count; i++)
         {
@@ -407,9 +410,7 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
                 Debug.Log(usableAttacks.Count);
             }
         }
-		animator.SetBool(defensiveStyleAnim, false);
-		animator.SetBool(middleStyleAnim, true);
-		animator.SetBool(aggresiveStyleAnim, false);
+
 
 
 
@@ -425,12 +426,12 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             if (usableAttacks[randomNum].attackHighOrLow)
             {
                 hitboxColliderScript.kickAttack(highHitCol, usableAttacks[randomNum].damage);
-                animator.Play(usableAttacks[randomNum].attackanim);
+                animator.SetTrigger(usableAttacks[randomNum].attackanim);
             }
             else
             {
 				hitboxColliderScript.kickAttack(lowHitCol, usableAttacks[randomNum].damage);
-				animator.Play(usableAttacks[randomNum].attackanim);
+				animator.SetTrigger(usableAttacks[randomNum].attackanim);
 			}
             isAttacking = true;
         }
@@ -439,12 +440,10 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
             if (timeUntilNextattack < timeSinceStart)
             {
                 timeUntilNextattack = timeSinceStart + Random.Range(1f, 3);
-
-            }
-            else
-            {
-                isAttacking = false;
-            }
+				isAttacking = false;
+				Debug.Log("Ehh whatttt?");
+			}
+           
             
         }
 		if (isBlocking)
@@ -484,12 +483,12 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
 			if (usableAttacks[randomNum].attackHighOrLow)
 			{
 				hitboxColliderScript.kickAttack(highHitCol, usableAttacks[randomNum-1].damage);
-				animator.Play(usableAttacks[randomNum].attackanim);
+				animator.SetTrigger(usableAttacks[randomNum].attackanim);
 			}
 			else
 			{
 				hitboxColliderScript.kickAttack(lowHitCol, usableAttacks[randomNum-1].damage);
-				animator.Play(usableAttacks[randomNum].attackanim);
+				animator.SetTrigger(usableAttacks[randomNum].attackanim);
 			}
 			isAttacking = true;
 		}
@@ -498,13 +497,11 @@ public class S_FSMAI_TLHF : S_EnemyFSM_TLHF
            
 			if (timeUntilNextattack < timeSinceStart)
 			{
-				timeUntilNextattack = timeSinceStart + Random.Range(1f, 3);
-
-			}
-			else
-			{
+				timeUntilNextattack = timeSinceStart + Random.Range(4f, 10);
 				isAttacking = false;
+				Debug.Log("Ehh whatttt?");
 			}
+
 
 		}
 

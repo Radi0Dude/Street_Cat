@@ -18,6 +18,5 @@ MonoBehaviour:
   style: 1
   damage: 20
   range: 1
-  animator: {fileID: 0}
   attackanim: Att/Punch
   counter: []
