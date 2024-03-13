@@ -2213,7 +2213,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168697041}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.12815605, y: 0.71807724, z: -0.13732414, w: 0.6701367}
+  m_LocalRotation: {x: 0.12815607, y: 0.71807724, z: -0.13732415, w: 0.6701367}
   m_LocalPosition: {x: 5.9432096, y: 17.8507, z: 0.2542596}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6962,7 +6962,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.12815605
+      value: 0.12815607
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalRotation.y
@@ -6970,7 +6970,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.13732414
+      value: -0.13732415
       objectReference: {fileID: 0}
     - target: {fileID: 4166692818134894628, guid: 60ee25eb4e46d984c9996602b0f2979c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7693,7 +7693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactTag: Player
   thisInteract: {fileID: 0}
-  sceneName: HotelLooby
+  sceneName: CorridorScene
 --- !u!65 &1426061315
 BoxCollider:
   m_ObjectHideFlags: 0
